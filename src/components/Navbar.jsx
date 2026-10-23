@@ -63,7 +63,7 @@ export default function Navbar({ onOpenAI }) {
         </a>
 
         {/* Center Nav */}
-        <nav className="hidden md:flex items-center gap-1 bg-zinc-950/80 px-3.5 py-1.5 rounded-full border border-white/10 shadow-2xl backdrop-blur-xl">
+        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-1 bg-zinc-950/80 px-3.5 py-1.5 rounded-full border border-white/10 shadow-2xl backdrop-blur-xl">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace('#', '');
             return (
@@ -87,6 +87,7 @@ export default function Navbar({ onOpenAI }) {
           {/* AI Copilot Button */}
           <button
             onClick={onOpenAI}
+            aria-label="Open AI Copilot Dialog"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-bold transition-all cursor-pointer shadow-sm hover:scale-105"
             title="Ask Portfolio AI"
           >
@@ -98,6 +99,7 @@ export default function Navbar({ onOpenAI }) {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View GitHub Profile"
             className="p-2 rounded-xl bg-zinc-900/80 border border-white/10 text-zinc-400 hover:text-white hover:border-cyan-500/40 transition-colors"
             title="GitHub Profile"
           >
@@ -107,6 +109,7 @@ export default function Navbar({ onOpenAI }) {
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View LinkedIn Profile"
             className="p-2 rounded-xl bg-zinc-900/80 border border-white/10 text-zinc-400 hover:text-white hover:border-cyan-500/40 transition-colors"
             title="LinkedIn Profile"
           >
