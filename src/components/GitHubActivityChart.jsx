@@ -191,15 +191,15 @@ export default function GitHubActivityChart() {
       {/* The 30 Days Heatmap Container */}
       <div className="relative">
         
-        {/* Mobile Swipe Cue */}
-        <div className="flex sm:hidden items-center justify-between text-[10px] font-mono text-zinc-500 mb-2 px-1">
-          <span>← 30-Day Timeline (Swipe) →</span>
+        {/* Mobile Info Cue */}
+        <div className="flex sm:hidden items-center justify-between text-[10px] font-mono text-zinc-500 mb-2.5 px-0.5">
+          <span>30-Day Matrix (3 Lines)</span>
           <span>Tap cell to inspect</span>
         </div>
 
-        {/* Responsive Grid / Horizontal Scroll Track for seamless mobile handling */}
-        <div className="overflow-x-auto pb-2 pt-1 -mx-1 px-1 sm:overflow-visible scrollbar-none touch-pan-x">
-          <div className="grid grid-cols-[repeat(30,minmax(20px,1fr))] sm:grid-cols-[repeat(30,minmax(0,1fr))] gap-1.5 sm:gap-2 min-w-[620px] sm:min-w-0">
+        {/* 3-Row Grid on Mobile (10 days x 3 rows) and 30 columns on Desktop */}
+        <div className="w-full">
+          <div className="grid grid-cols-10 sm:grid-cols-[repeat(30,minmax(0,1fr))] gap-1.5 sm:gap-2 w-full">
             {activityDays.map((day) => {
               const isSelected = hoveredDay?.date === day.date;
               return (
