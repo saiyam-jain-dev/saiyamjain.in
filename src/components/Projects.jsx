@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles, Search, Layers, Eye, Star, ArrowUpRight, FolderGit2 } from 'lucide-react';
+import { ExternalLink, Sparkles, Search, Layers, Eye, Star, ArrowUpRight, FolderGit2, X } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { projects } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
@@ -75,9 +75,26 @@ export default function Projects() {
               placeholder="Search stack, AI, Java..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 outline-none focus:border-cyan-500 font-mono transition-colors"
+              className="w-full pl-9 pr-8 py-2 text-xs rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 outline-none focus:border-cyan-500 font-mono transition-colors"
             />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 rounded text-zinc-500 hover:text-white"
+                title="Clear search"
+              >
+                <X size={12} />
+              </button>
+            )}
           </div>
+        </div>
+
+        {/* Results Counter */}
+        <div className="flex items-center justify-between text-xs font-mono text-zinc-500 mb-4 px-1">
+          <span>Displaying {filteredProjects.length} of {projects.length} flagship systems</span>
+          {searchQuery && (
+            <span className="text-cyan-400">Filtering by "{searchQuery}"</span>
+          )}
         </div>
 
         {/* Projects Grid */}
