@@ -284,15 +284,21 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono text-zinc-400 mb-1">
-                    Message
-                  </label>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-[11px] font-mono text-zinc-400">
+                      Message
+                    </label>
+                    <span className="text-[10px] font-mono text-zinc-600">
+                      max 1000 chars
+                    </span>
+                  </div>
                   <textarea
                     name="message"
                     required
+                    maxLength={1000}
                     rows={4}
-                    placeholder="Tell me about what you're building..."
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-700 text-xs font-mono focus:border-zinc-500 outline-none transition-colors resize-none"
+                    placeholder="Tell me about your team, tech stack, or engineering goals..."
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-700 text-xs font-mono focus:border-cyan-500 outline-none transition-colors resize-none"
                   ></textarea>
                 </div>
 
