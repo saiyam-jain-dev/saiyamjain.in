@@ -17,6 +17,18 @@ import { Bot, Sparkles } from 'lucide-react';
 export default function App() {
   const [isAIOpen, setIsAIOpen] = useState(false);
 
+  // Global Cmd+K or Ctrl+K shortcut to toggle AI Copilot
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsAIOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-black text-zinc-100 selection:bg-cyan-500 selection:text-black overflow-x-hidden">
       
