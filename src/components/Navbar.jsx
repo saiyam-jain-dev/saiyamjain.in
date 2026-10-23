@@ -57,7 +57,7 @@ export default function Navbar({ onOpenAI }) {
               {personalInfo.name}
             </span>
             <span className="text-[10px] text-zinc-400 font-mono">
-              2026 AI Portfolio
+              Software Engineer
             </span>
           </div>
         </a>
