@@ -11,6 +11,7 @@ import AICopilot from './components/AICopilot';
 import SexyInteractivePointer from './components/SexyInteractivePointer';
 import MusicPlayer from './components/MusicPlayer';
 import ScrollToTop from './components/ScrollToTop';
+import KonamiEasterEgg from './components/KonamiEasterEgg';
 import { Bot, Sparkles } from 'lucide-react';
 
 export default function App() {
@@ -27,6 +28,9 @@ export default function App() {
 
       {/* Modern 2026 Stealth Navbar */}
       <Navbar onOpenAI={() => setIsAIOpen(true)} />
+
+      {/* Developer Konami Code Easter Egg */}
+      <KonamiEasterEgg />
 
       {/* Main Content Sections */}
       <main className="relative z-10">
