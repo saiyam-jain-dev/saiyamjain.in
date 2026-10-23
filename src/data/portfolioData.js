@@ -19,7 +19,7 @@ export const personalInfo = {
   twitter: "https://twitter.com/_Samdev_",
   instagram: "https://www.instagram.com/saiyamjainn__/",
   resumeUrl: "https://drive.google.com/file/d/1RZjlYBWEqFdFrYwpol0yKkb6Yn2bGO55/view?usp=drive_link",
-  avatarUrl: "/HeroImage.jpg",
+  avatarUrl: "/favicon.svg",
   emailjs: {
     serviceId: "service_h3jxa89",
     templateId: "template_b3i5bq6",

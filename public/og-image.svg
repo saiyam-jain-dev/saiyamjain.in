@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0e1726" />
+      <stop offset="60%" stop-color="#05070c" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="glow-heavy" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <pattern id="grid-dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="rgba(255, 255, 255, 0.08)" />
+    </pattern>
+  </defs>
+
+  <!-- Deep Obsidian Background -->
+  <rect width="1200" height="630" fill="url(#bg-grad)" />
+  <rect width="1200" height="630" fill="url(#grid-dots)" />
+
+  <!-- Cyber Horizon Ambient Glow -->
+  <ellipse cx="600" cy="80" rx="450" ry="160" fill="rgba(6, 182, 212, 0.18)" />
+  <ellipse cx="600" cy="240" rx="300" ry="200" fill="rgba(99, 102, 241, 0.12)" />
+
+  <!-- Central Glass Brand Emblem -->
+  <g transform="translate(600, 180)">
+    <rect x="-64" y="-64" width="128" height="128" rx="32" fill="#09090b" stroke="url(#neon-cyan)" stroke-width="3" filter="url(#glow-heavy)" />
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="56" fill="url(#neon-cyan)" text-anchor="middle" letter-spacing="-2px">SJ</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="600" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="52" fill="#ffffff" text-anchor="middle" letter-spacing="-1px">
+    Saiyam Jain
+  </text>
+
+  <!-- Subtitle Tagline -->
+  <text x="600" y="420" font-family="'JetBrains Mono', 'Fira Code', monospace, -apple-system, sans-serif" font-weight="600" font-size="24" fill="#22d3ee" text-anchor="middle" letter-spacing="2px">
+    POLYGLOT SOFTWARE ENGINEER &amp; AI ARCHITECT
+  </text>
+
+  <!-- Capability Badges -->
+  <g transform="translate(600, 480)">
+    <!-- Badge 1 -->
+    <rect x="-370" y="0" width="220" height="42" rx="10" fill="rgba(10, 15, 26, 0.85)" stroke="rgba(6, 182, 212, 0.35)" stroke-width="1.5" />
+    <text x="-260" y="26" font-family="monospace" font-size="14" font-weight="600" fill="#a5f3fc" text-anchor="middle">Java Enterprise Depth</text>
+
+    <!-- Badge 2 -->
+    <rect x="-115" y="0" width="230" height="42" rx="10" fill="rgba(10, 15, 26, 0.85)" stroke="rgba(99, 102, 241, 0.35)" stroke-width="1.5" />
+    <text x="0" y="26" font-family="monospace" font-size="14" font-weight="600" fill="#c7d2fe" text-anchor="middle">GenAI &amp; LLM Systems</text>
+
+    <!-- Badge 3 -->
+    <rect x="150" y="0" width="220" height="42" rx="10" fill="rgba(10, 15, 26, 0.85)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1.5" />
+    <text x="260" y="26" font-family="monospace" font-size="14" font-weight="600" fill="#6ee7b7" text-anchor="middle">Full-Stack / React 19</text>
+  </g>
+
+  <!-- Footer Link URL -->
+  <text x="600" y="575" font-family="monospace" font-size="16" fill="#71717a" text-anchor="middle" letter-spacing="1px">
+    saiyamjain.in • Verified Engineering Telemetry
+  </text>
+</svg>
