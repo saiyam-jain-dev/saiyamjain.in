@@ -44,19 +44,29 @@ export default function Skills() {
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <div className="flex items-center p-1 rounded-xl bg-zinc-950 border border-zinc-800 overflow-x-auto scrollbar-none w-full sm:w-auto">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3 sm:px-4 py-2 rounded-lg text-xs font-mono font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
-                    activeCategory === cat.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md'
-                      : 'text-zinc-500 hover:text-zinc-300'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
+              {categories.map((cat) => {
+                const count = cat.id === 'all' 
+                  ? allSkills.length 
+                  : allSkills.filter(s => s.category === cat.id).length;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs font-mono font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                      activeCategory === cat.id
+                        ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md'
+                        : 'text-zinc-500 hover:text-zinc-300'
+                    }`}
+                  >
+                    <span>{cat.label}</span>
+                    <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                      activeCategory === cat.id ? 'bg-black/30 text-cyan-200' : 'bg-zinc-900 text-zinc-500'
+                    }`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
 
             <div className="relative w-full sm:w-56">
