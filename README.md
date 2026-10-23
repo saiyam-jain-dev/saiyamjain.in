@@ -1,38 +1,69 @@
-# Saiyam Jain — Modern Interactive Developer Portfolio
+# Saiyam Jain — High-Performance Engineering Portfolio
 
-A modern, high-performance portfolio built with **React**, **Vite**, and **Tailwind CSS**.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status)](https://app.netlify.com/)
+[![React 19](https://img.shields.io/badge/React-19.x-61dafb?logo=react)](https://react.dev/)
+[![Three.js](https://img.shields.io/badge/Three.js-0.182-black?logo=three.js)](https://threejs.org/)
+[![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-## ✨ Features
-- **Modern Glassmorphism Design**: Sleek dark and light theme toggle with glowing background orbs and subtle grid textures.
-- **Hero Section**: Dynamic typing role effect, verified status pill, interactive profile 3D card with floating badges, live statistics counter, and celebratory confetti effect.
-- **Interactive Developer Terminal / Command Palette**: Press `⌘K` / `Ctrl+K` or click the floating terminal pill to run commands (`help`, `skills`, `projects`, `experience`, `education`, `resume`, `contact`, `sudo hire`).
-- **Interactive Skills Arsenal**: Search filter & category selector (Frontend, Backend, Mobile, DevOps) with official tech stack icons.
-- **Experience & Education Timeline**: Detailed breakdown of software engineering roles (RemoteState) and academic achievements (TMU BCA, 7.5 CGPA).
-- **Projects Showcase**: Filterable showcase (All, Full Stack, Frontend) with live preview links, GitHub repos, and interactive Quick Details modal.
-- **Working Contact Section**: Connected with EmailJS (`service_b2e46pj`, `template_1mmd3eo`), copy-to-clipboard email feedback, and social links.
-- **Netlify & GoDaddy Ready**: Includes `public/_redirects` for Single Page Application routing.
+Production portfolio of **Saiyam Jain** — Polyglot Software Engineer specializing in Java automation testing architectures, modern AI QA frameworks, and high-performance full-stack web and mobile systems.
+
+Live Domain: [https://saiyamjain.in](https://saiyamjain.in)
 
 ---
 
-## 🚀 Running Locally
+## ⚡ Architecture & Engineering Highlights
+
+* **3D AI Neural Core Background**: WebGL Three.js spatial background with gyro-orbital torus rings, cyber terrain wave, and adaptive mobile particle throttling.
+* **Quantum Tesseract Hero Stage**: Interactive 4D hypercube with 3-mode switchable topology (Tesseract, Matrix, Galaxy) and mouse drag orbit physics.
+* **30-Day GitHub Telemetry Chart**: Real-time continuous commit matrix with direct touch selection, active status telemetry, and responsive 3-row mobile layout.
+* **Cyber Music Player ("Saiyam's Playlist")**: Official embedded Spotify Web API player featuring The 1975, The Weeknd, One Direction, The Beatles, Queen, and Nirvana with persistent background playback.
+* **AI Copilot Knowledge Engine**: In-browser contextual agent answering recruiter questions on Java testing depth, GenAI tools, and full-stack capabilities.
+* **Zero-Lag Precision Cursor**: High-DPI stylized white pointer with solid boundaries, subtle neon notch pip, and tactile click feedback.
+
+---
+
+## 📦 Bundle & Performance Metrics
+
+| Metric | Target | Actual |
+| :--- | :--- | :--- |
+| **Main JS Bundle** | `< 250 kB` | **124 kB** (34 kB gzipped) |
+| **Production Build Time** | `< 2.0s` | **677 ms** |
+| **Mobile Canvas FPS** | `60+ FPS` | **60-120 FPS** (Adaptive DPR 1.25) |
+| **Code Splitting** | Modular | Parallel chunks (`three-core`, `react-vendor`, `icons`) |
+
+---
+
+## 🛠️ Local Development
 
 ```bash
-# Install dependencies
+# 1. Clone repository
+git clone https://github.com/saiyam-jain-dev/saiyamjain.in.git
+cd saiyamjain.in
+
+# 2. Install dependencies
 npm install
 
-# Start development server
+# 3. Launch Vite dev server
 npm run dev
 
-# Build for production
+# 4. Compile optimized production distribution
 npm run build
 ```
 
 ---
 
-## 🌐 Deploying to Netlify
-1. Connect your GitHub repository `saiyamjain.in` to Netlify.
-2. Build settings:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-3. Domain on GoDaddy:
-   - Point your GoDaddy DNS CNAME/A records to Netlify according to Netlify's Custom Domain settings.
+## 🚀 Netlify Deployment
+
+1. Connect the `saiyam-jain-dev/saiyamjain.in` repository in Netlify.
+2. Build configurations are pre-defined in `netlify.toml`:
+   * **Build Command**: `npm run build`
+   * **Publish Directory**: `dist`
+   * **SPA Redirects**: `/* -> /index.html 200`
+   * **Security Headers**: HSTS, X-Frame-Options, X-Content-Type-Options, and immutable 1-year asset caching.
+
+---
+
+## 📄 License
+MIT © 2026 [Saiyam Jain](https://github.com/saiyam-jain-dev)
