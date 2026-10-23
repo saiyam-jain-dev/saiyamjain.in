@@ -18,7 +18,7 @@ Live Domain: [https://saiyamjain.in](https://saiyamjain.in)
 * **3D AI Neural Core Background**: WebGL Three.js spatial background with gyro-orbital torus rings, cyber terrain wave, and adaptive mobile particle throttling.
 * **Quantum Tesseract Hero Stage**: Interactive 4D hypercube with 3-mode switchable topology (Tesseract, Matrix, Galaxy) and mouse drag orbit physics.
 * **30-Day GitHub Telemetry Chart**: Real-time continuous commit matrix with direct touch selection, active status telemetry, and responsive 3-row mobile layout.
-* **Cyber Music Player ("Saiyam's Playlist")**: Official embedded Spotify Web API player featuring The 1975, The Weeknd, One Direction, The Beatles, Queen, and Nirvana with persistent background playback.
+* **Cyber Music Player ("Saiyam's Playlist")**: Official Spotify embeds featuring The 1975, The Weeknd, One Direction, The Beatles, Queen, and Nirvana. Full in-page playback depends on Spotify account and regional availability; each track links directly to Spotify.
 * **AI Copilot Knowledge Engine**: In-browser contextual agent answering recruiter questions on Java testing depth, GenAI tools, and full-stack capabilities.
 * **Zero-Lag Precision Cursor**: High-DPI stylized white pointer with solid boundaries, subtle neon notch pip, and tactile click feedback.
 

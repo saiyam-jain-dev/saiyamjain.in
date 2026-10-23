@@ -251,7 +251,7 @@ export default function MusicPlayer() {
   return (
     <>
       {/* Floating Cyber Music Widget (Bottom Left) */}
-      <div className="fixed bottom-4 left-3 sm:bottom-6 sm:left-6 z-40 select-none max-w-[calc(100vw-85px)] sm:max-w-none">
+      <div className="fixed bottom-4 left-3 sm:bottom-6 sm:left-6 z-40 select-none w-max max-w-[calc(100vw-1.5rem)]">
         
         {/* Persistent Tracklist Drawer & Spotify Official Embed (Never unmounts, never pauses on minimize) */}
         <div className={`transition-all duration-300 origin-bottom-left ${
@@ -267,7 +267,7 @@ export default function MusicPlayer() {
                 </span>
                 <div>
                   <h4 className="text-white font-bold text-xs">Saiyam's Playlist</h4>
-                  <p className="text-[10px] text-emerald-400 font-mono">Spotify Connected • The 1975 Edition</p>
+                  <p className="text-[10px] text-emerald-400 font-mono">The 1975 Edition</p>
                 </div>
               </div>
               
@@ -276,14 +276,14 @@ export default function MusicPlayer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-2.5 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-[10px] font-mono flex items-center gap-1 transition-colors cursor-pointer"
-                title="Open current track in Spotify"
+                title="Open the full track on Spotify"
               >
-                <span>Spotify</span>
+                <span>Full track</span>
                 <ExternalLink size={10} />
               </a>
             </div>
 
-            {/* Spotify Official Secure Embed (Never triggers IDM downloads) */}
+            {/* Spotify controls whether full playback is available in its embed. */}
             <div className="mb-3 rounded-2xl overflow-hidden bg-black/80 border border-emerald-500/30 shadow-inner">
               <iframe
                 src={`https://open.spotify.com/embed/track/${currentTrack.spotifyId}?utm_source=generator&theme=0`}
@@ -291,11 +291,14 @@ export default function MusicPlayer() {
                 height="152"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
+                loading="eager"
                 title={`Spotify Player - ${currentTrack.title}`}
                 className="w-full"
               />
             </div>
+            <p className="mb-3 text-[10px] leading-relaxed text-zinc-400">
+              Spotify may limit in-page playback. Sign in to Spotify or open the full track there.
+            </p>
 
             {/* Filter Tabs */}
             <div className="flex items-center gap-1 overflow-x-auto pb-2 mb-2 text-[10px] font-mono border-b border-white/5 scrollbar-none">
@@ -377,17 +380,14 @@ export default function MusicPlayer() {
             </div>
 
             <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-zinc-500">
-              <span className="flex items-center gap-1.5 text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Spotify Connected
-              </span>
+              <span>Spotify embed • Playback varies by account</span>
               <span>19 Curated Tracks</span>
             </div>
           </div>
 
         {/* Main Floating Controller Capsule */}
         <div 
-          className="flex items-center gap-1.5 sm:gap-2 p-1 pr-2 sm:p-1.5 sm:pr-3 rounded-full bg-zinc-950/95 border border-cyan-500/35 shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:border-cyan-400/60 backdrop-blur-2xl transition-all group"
+          className="flex w-max max-w-full items-center gap-1.5 sm:gap-2 p-1 pr-2 sm:p-1.5 sm:pr-3 rounded-full bg-zinc-950/95 border border-cyan-500/35 shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:border-cyan-400/60 backdrop-blur-2xl transition-all group"
         >
           
           {/* Rotating Album Art Thumbnail */}
