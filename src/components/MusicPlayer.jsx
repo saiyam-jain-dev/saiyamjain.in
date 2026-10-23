@@ -253,12 +253,14 @@ export default function MusicPlayer() {
       {/* Floating Cyber Music Widget (Bottom Left) */}
       <div className="fixed bottom-4 left-3 sm:bottom-6 sm:left-6 z-40 select-none max-w-[calc(100vw-85px)] sm:max-w-none">
         
-        {/* Expanded Tracklist Drawer & Spotify Official Embed */}
-        {isExpanded && (
-          <div className="mb-2.5 w-[calc(100vw-1.5rem)] max-w-sm sm:w-96 rounded-3xl bg-zinc-950/95 border border-cyan-500/35 p-3.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] backdrop-blur-2xl animate-in slide-in-from-bottom-3 duration-200">
-            
-            {/* Header with Spotify Brand & Playlist Title */}
-            <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-white/10 text-xs font-mono">
+        {/* Persistent Tracklist Drawer & Spotify Official Embed (Never unmounts, never pauses on minimize) */}
+        <div className={`transition-all duration-300 origin-bottom-left ${
+          isExpanded 
+            ? 'opacity-100 scale-100 pointer-events-auto h-auto mb-2.5 w-[calc(100vw-1.5rem)] max-w-sm sm:w-96 rounded-3xl bg-zinc-950/95 border border-cyan-500/35 p-3.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] backdrop-blur-2xl' 
+            : 'opacity-0 scale-95 pointer-events-none h-0 mb-0 p-0 border-0 overflow-hidden'
+        }`}>
+          {/* Header with Spotify Brand & Playlist Title */}
+          <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-white/10 text-xs font-mono">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center">
                   <SpotifyIcon size={14} />
@@ -382,12 +384,10 @@ export default function MusicPlayer() {
               <span>19 Curated Tracks</span>
             </div>
           </div>
-        )}
 
         {/* Main Floating Controller Capsule */}
         <div 
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-1.5 sm:gap-2 p-1 pr-2 sm:p-1.5 sm:pr-3 rounded-full bg-zinc-950/95 border border-cyan-500/35 shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:border-cyan-400/60 backdrop-blur-2xl transition-all cursor-pointer group"
+          className="flex items-center gap-1.5 sm:gap-2 p-1 pr-2 sm:p-1.5 sm:pr-3 rounded-full bg-zinc-950/95 border border-cyan-500/35 shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:border-cyan-400/60 backdrop-blur-2xl transition-all group"
         >
           
           {/* Rotating Album Art Thumbnail */}
