@@ -1,0 +1,22 @@
+{
+  "name": "Saiyam Jain — Portfolio",
+  "short_name": "Saiyam",
+  "description": "Polyglot Software Engineer, Java Automation Testing & GenAI Application Architect",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/HeroImage.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
