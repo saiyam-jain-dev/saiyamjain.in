@@ -10,6 +10,7 @@ import ThreeBackground from './components/ThreeBackground';
 import AICopilot from './components/AICopilot';
 import SexyInteractivePointer from './components/SexyInteractivePointer';
 import MusicPlayer from './components/MusicPlayer';
+import ScrollToTop from './components/ScrollToTop';
 import { Bot, Sparkles } from 'lucide-react';
 
 export default function App() {
@@ -39,7 +40,10 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Cyber Music Player (The Weeknd Hits) */}
+      {/* Floating Scroll To Top */}
+      <ScrollToTop />
+
+      {/* Cyber Music Player */}
       <MusicPlayer />
 
       {/* 2026 AI Assistant Copilot Modal */}
