@@ -22,7 +22,7 @@ export default function Hero3DStage() {
       0.1,
       1000
     );
-    camera.position.set(0, 0, 7.5);
+    camera.position.set(0, 0, 5.2);
 
     const isMobile = window.innerWidth < 768;
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile, powerPreference: 'high-performance' });
@@ -361,35 +361,39 @@ export default function Hero3DStage() {
   }, []);
 
   return (
-    <div className="relative w-full aspect-square max-w-[280px] xs:max-w-[320px] sm:max-w-[420px] lg:max-w-[480px] mx-auto rounded-3xl bg-zinc-950/90 border border-cyan-500/30 p-2 shadow-[0_0_50px_rgba(6,182,212,0.2)] overflow-hidden group touch-pan-y">
+    <div className="flex flex-col items-center w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] mx-auto">
       
-      {/* 3D Canvas Mounting Point */}
-      <div 
-        ref={mountRef} 
-        onClick={() => shockwaveTriggerRef.current?.()}
-        className="w-full h-full cursor-grab active:cursor-grabbing select-none"
-      />
+      {/* 3D Box Container (Full Canvas Area, Unconstrained) */}
+      <div className="relative w-full aspect-square rounded-3xl bg-zinc-950/90 border border-cyan-500/30 p-2 shadow-[0_0_50px_rgba(6,182,212,0.2)] overflow-hidden group touch-pan-y">
+        
+        {/* 3D Canvas Mounting Point */}
+        <div 
+          ref={mountRef} 
+          onClick={() => shockwaveTriggerRef.current?.()}
+          className="w-full h-full cursor-grab active:cursor-grabbing select-none"
+        />
 
-      {/* Top HUD Telemetry */}
-      <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-4 sm:right-4 flex items-center justify-between pointer-events-none text-[9px] sm:text-[10px] font-mono">
-        <div className="flex items-center gap-1.5 sm:gap-2 bg-black/80 px-2.5 py-1 rounded-full border border-white/10 backdrop-blur-md text-cyan-300">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          <span>3D: {activeMode.toUpperCase()}</span>
-        </div>
+        {/* Top HUD Telemetry */}
+        <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-4 sm:right-4 flex items-center justify-between pointer-events-none text-[9px] sm:text-[10px] font-mono">
+          <div className="flex items-center gap-1.5 sm:gap-2 bg-black/80 px-2.5 py-1 rounded-full border border-white/10 backdrop-blur-md text-cyan-300">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            <span>3D: {activeMode.toUpperCase()}</span>
+          </div>
 
-        <div className="bg-black/80 px-2 py-1 rounded-full border border-white/10 backdrop-blur-md text-zinc-400">
-          TOUCH / ORBIT
+          <div className="bg-black/80 px-2 py-1 rounded-full border border-white/10 backdrop-blur-md text-zinc-400">
+            DRAG / ORBIT
+          </div>
         </div>
       </div>
 
-      {/* Bottom Mode Switcher Controls */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-1.5 bg-black/85 p-1 sm:p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
+      {/* Mode Switcher Controls OUTSIDE the Box */}
+      <div className="mt-3.5 flex items-center justify-between gap-1.5 sm:gap-2 w-full max-w-[300px] sm:max-w-[340px] bg-zinc-950/90 p-1.5 rounded-2xl border border-cyan-500/30 shadow-lg backdrop-blur-md">
         <button
           onClick={() => { setActiveMode('tesseract'); shockwaveTriggerRef.current?.(); }}
-          className={`flex-1 py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-mono font-bold transition-all cursor-pointer ${
+          className={`flex-1 py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-mono font-bold transition-all cursor-pointer ${
             activeMode === 'tesseract'
-              ? 'bg-cyan-500 text-black shadow-md'
-              : 'text-zinc-400 hover:text-white'
+              ? 'bg-cyan-500 text-black shadow-md shadow-cyan-500/30'
+              : 'text-zinc-400 hover:text-white hover:bg-white/5'
           }`}
         >
           Tesseract
@@ -397,10 +401,10 @@ export default function Hero3DStage() {
 
         <button
           onClick={() => { setActiveMode('matrix'); shockwaveTriggerRef.current?.(); }}
-          className={`flex-1 py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-mono font-bold transition-all cursor-pointer ${
+          className={`flex-1 py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-mono font-bold transition-all cursor-pointer ${
             activeMode === 'matrix'
-              ? 'bg-indigo-600 text-white shadow-md'
-              : 'text-zinc-400 hover:text-white'
+              ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+              : 'text-zinc-400 hover:text-white hover:bg-white/5'
           }`}
         >
           Matrix
@@ -408,10 +412,10 @@ export default function Hero3DStage() {
 
         <button
           onClick={() => { setActiveMode('galaxy'); shockwaveTriggerRef.current?.(); }}
-          className={`flex-1 py-1 sm:py-1.5 px-1.5 sm:px-2 rounded-xl text-[9px] sm:text-[10px] font-mono font-bold transition-all cursor-pointer ${
+          className={`flex-1 py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-mono font-bold transition-all cursor-pointer ${
             activeMode === 'galaxy'
-              ? 'bg-fuchsia-600 text-white shadow-md'
-              : 'text-zinc-400 hover:text-white'
+              ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-600/30'
+              : 'text-zinc-400 hover:text-white hover:bg-white/5'
           }`}
         >
           Galaxy
