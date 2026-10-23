@@ -153,12 +153,17 @@ export default function Projects() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1.5 mb-6">
                     {project.tags.map((tag, idx) => (
-                      <span
+                      <button
                         key={idx}
-                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-900/90 text-zinc-300 border border-zinc-800"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSearchTerm(tag);
+                        }}
+                        title={`Filter by ${tag}`}
+                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-900/90 hover:bg-cyan-950/60 text-zinc-300 hover:text-cyan-300 border border-zinc-800 hover:border-cyan-500/40 transition-colors cursor-pointer"
                       >
-                        {tag}
-                      </span>
+                        #{tag}
+                      </button>
                     ))}
                   </div>
                 </div>
