@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
+import GitHubUpdates from './components/GitHubUpdates';
 import OpenSourceSection from './components/OpenSourceSection';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -48,8 +49,9 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="relative z-10">
         <Hero onOpenAI={() => setIsAIOpen(true)} />
-        <Projects />
+        <GitHubUpdates />
         <OpenSourceSection />
+        <Projects />
         <Skills />
         <Experience />
         <Contact />

@@ -56,7 +56,7 @@ export default function GitHubUpdates() {
   }, []);
 
   return (
-    <div className="mt-20 pt-16 border-t border-zinc-900">
+    <div id="repositories" className="mt-20 pt-16 border-t border-zinc-900">
       
       {/* Top Header of GitHub Section */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">

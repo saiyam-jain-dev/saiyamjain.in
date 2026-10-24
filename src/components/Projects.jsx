@@ -3,7 +3,6 @@ import { ExternalLink, Sparkles, Search, Layers, Eye, Star, ArrowUpRight, Folder
 import { GithubIcon } from './Icons';
 import { projects } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
-import GitHubUpdates from './GitHubUpdates';
 import GitHubActivityChart from './GitHubActivityChart';
 
 export default function Projects() {
@@ -213,9 +212,6 @@ export default function Projects() {
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
-
-        {/* Live GitHub Updates Stream */}
-        <GitHubUpdates />
 
       </div>
     </section>

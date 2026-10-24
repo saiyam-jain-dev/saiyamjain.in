@@ -10,6 +10,7 @@ export default function Navbar({ onOpenAI }) {
 
   const navLinks = [
     { label: 'Work', href: '#projects' },
+    { label: 'Repositories', href: '#repositories' },
     { label: 'Open Source', href: '#opensource' },
     { label: 'Stack', href: '#skills' },
     { label: 'Experience', href: '#experience' },
@@ -20,7 +21,7 @@ export default function Navbar({ onOpenAI }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const sections = ['hero', 'projects', 'opensource', 'skills', 'experience', 'contact'];
+      const sections = ['hero', 'repositories', 'opensource', 'projects', 'skills', 'experience', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
