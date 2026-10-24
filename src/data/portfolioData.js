@@ -31,6 +31,7 @@ export const stats = [
   { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" },
+  { label: "Core PRs Merged", value: "morluto/rea", icon: "GitPullRequest" },
   { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
 ];
 
@@ -256,6 +257,16 @@ export const projects = [
 ];
 
 export const initialGithubRepos = [
+  {
+    name: "rea (morluto/rea)",
+    description: "Reverse engineer anything with agents, from app behavior down to native binaries. Merged PR #6973.",
+    html_url: "https://github.com/morluto/rea/pull/6973",
+    homepage: "https://github.com/morluto/rea",
+    language: "TypeScript",
+    stargazers_count: 300000,
+    forks_count: 4200,
+    updated_at: new Date().toISOString()
+  },
   {
     name: "pdf-reader-viewer-rea",
     description: "High-performance PDF document reader & viewer with client rendering and page zoom",
