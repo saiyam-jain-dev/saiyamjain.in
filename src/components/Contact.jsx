@@ -98,7 +98,7 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-zinc-900">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">
-              <span>[04] Connect</span>
+              <span>[06] Connect</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
               Get in Touch

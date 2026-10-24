@@ -15,7 +15,7 @@ export default function OpenSourceSection() {
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
               <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>[02] Production Open Source Impact</span>
+              <span>[01] Production Open Source Impact</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
               Open Source Contributions

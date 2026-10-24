@@ -13,7 +13,7 @@ export default function Experience() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 pb-6 border-b border-zinc-900">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
-              <span>[03] Track Record</span>
+              <span>[05] Track Record</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
               Experience & Education
