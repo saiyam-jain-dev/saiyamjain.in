@@ -49,8 +49,8 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="relative z-10">
         <Hero onOpenAI={() => setIsAIOpen(true)} />
-        <GitHubUpdates />
         <OpenSourceSection />
+        <GitHubUpdates />
         <Projects />
         <Skills />
         <Experience />

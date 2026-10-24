@@ -34,7 +34,7 @@ export default function Projects() {
         {/* Section Header */}
         <div className="mb-10 pb-6 border-b border-zinc-900">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
-            <span>[01] Production Systems & AI Applications</span>
+            <span>[03] Production Systems & AI Applications</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
             Featured Engineering
@@ -156,7 +156,7 @@ export default function Projects() {
                         key={idx}
                         onClick={(e) => {
                           e.stopPropagation();
-                          setSearchTerm(tag);
+                          setSearchQuery(tag);
                         }}
                         title={`Filter by ${tag}`}
                         className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-900/90 hover:bg-cyan-950/60 text-zinc-300 hover:text-cyan-300 border border-zinc-800 hover:border-cyan-500/40 transition-colors cursor-pointer"

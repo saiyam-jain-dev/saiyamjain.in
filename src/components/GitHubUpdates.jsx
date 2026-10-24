@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  GitBranch, 
-  Star, 
-  GitFork, 
-  ExternalLink, 
-  RefreshCw, 
-  Clock, 
+import {
+  Star,
+  GitFork,
+  ExternalLink,
+  RefreshCw,
+  Clock,
   FolderGit2,
   ArrowUpRight
 } from 'lucide-react';
@@ -36,13 +35,19 @@ export default function GitHubUpdates() {
   const fetchLatestRepos = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`https://api.github.com/users/${personalInfo.githubUsername}/repos?sort=updated&per_page=8`);
+      const res = await fetch(
+        `https://api.github.com/users/${personalInfo.githubUsername}/repos?sort=updated&per_page=8`
+      );
       if (!res.ok) throw new Error('API Rate Limit');
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        const filtered = data.filter(r => r.name !== personalInfo.githubUsername).slice(0, 6);
+        const filtered = data
+          .filter((r) => r.name !== personalInfo.githubUsername)
+          .slice(0, 6);
         setRepos(filtered);
-        setLastSynced(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+        setLastSynced(
+          new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        );
       }
     } catch (err) {
       setLastSynced('Cached');
@@ -56,138 +61,135 @@ export default function GitHubUpdates() {
   }, []);
 
   return (
-    <div id="repositories" className="mt-20 pt-16 border-t border-zinc-900">
-      
-      {/* Top Header of GitHub Section */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-        <div>
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>Real-Time Codebase</span>
+    <section id="repositories" className="py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section Header */}
+        <div className="mb-10 pb-6 border-b border-zinc-900">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
+            <span>[02] Live GitHub Codebase</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight flex items-center gap-2.5">
-            <span>Latest Repositories</span>
-          </h3>
-          <p className="text-xs text-zinc-500 font-mono mt-1">
-            Synced from{' '}
-            <a 
-              href={personalInfo.github} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-zinc-300 hover:text-white underline"
-            >
-              github.com/{personalInfo.githubUsername}
-            </a>
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+            Repositories
+          </h2>
+          <p className="text-sm text-zinc-400 font-mono mt-1">
+            Real-time sync from GitHub &mdash; all 44+ public repositories.
           </p>
         </div>
 
-        {/* Sync Controls */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-          <span className="text-[11px] font-mono text-zinc-600 hidden sm:inline">
-            Status: {lastSynced}
-          </span>
-          <button
-            onClick={fetchLatestRepos}
-            disabled={loading}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono transition-all cursor-pointer disabled:opacity-50"
-            title="Sync with GitHub API"
-          >
-            <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
-            <span>{loading ? 'Syncing...' : 'Sync Live'}</span>
-          </button>
+        {/* Controls Row */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Live sync</span>
+            <span className="hidden sm:inline text-zinc-700">·</span>
+            <span className="hidden sm:inline">Last synced: {lastSynced}</span>
+          </div>
 
-          <a
-            href={`${personalInfo.github}?tab=repositories`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 text-xs font-mono border border-zinc-800 transition-colors"
-          >
-            <GithubIcon size={13} />
-            <span>All 44+ Repos</span>
-            <ArrowUpRight size={12} className="text-zinc-500" />
-          </a>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <button
+              onClick={fetchLatestRepos}
+              disabled={loading}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono transition-all cursor-pointer disabled:opacity-50"
+              title="Sync with GitHub API"
+            >
+              <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
+              <span>{loading ? 'Syncing...' : 'Sync Live'}</span>
+            </button>
+
+            <a
+              href={`${personalInfo.github}?tab=repositories`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 text-xs font-mono border border-zinc-800 transition-colors"
+            >
+              <GithubIcon size={13} />
+              <span>All 44+ Repos</span>
+              <ArrowUpRight size={12} className="text-zinc-500" />
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* GitHub Repo Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {repos.map((repo) => (
-          <div
-            key={repo.name}
-            className="p-5 rounded-2xl stealth-card flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold text-sm text-white group-hover:text-zinc-200 transition-colors flex items-center gap-2 break-all font-mono"
-                >
-                  <FolderGit2 size={15} className="text-zinc-500 shrink-0" />
-                  <span>{repo.name}</span>
-                </a>
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1 text-zinc-600 hover:text-white transition-colors shrink-0"
-                >
-                  <ExternalLink size={13} />
-                </a>
-              </div>
-
-              <p className="text-xs text-zinc-500 line-clamp-2 leading-relaxed mb-4">
-                {repo.description || 'Public engineering repository by Saiyam Jain.'}
-              </p>
-            </div>
-
-            <div>
-              <div className="pt-3 border-t border-zinc-900 flex items-center justify-between text-[11px] font-mono text-zinc-500">
-                {repo.language ? (
-                  <span className="text-zinc-300 font-semibold">{repo.language}</span>
-                ) : (
-                  <span>Code</span>
-                )}
-
-                <div className="flex items-center gap-3">
-                  {repo.stargazers_count > 0 && (
-                    <span className="flex items-center gap-1 text-amber-400">
-                      <Star size={11} className="fill-amber-400" />
-                      {repo.stargazers_count}
-                    </span>
-                  )}
-                  {repo.forks_count > 0 && (
-                    <span className="flex items-center gap-1 text-zinc-500">
-                      <GitFork size={11} />
-                      {repo.forks_count}
-                    </span>
-                  )}
-                  <span className="flex items-center gap-1 text-zinc-600">
-                    <Clock size={11} />
-                    {formatRelativeTime(repo.updated_at)}
-                  </span>
-                </div>
-              </div>
-
-              {repo.homepage && (
-                <div className="mt-3 pt-2">
+        {/* Repo Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {repos.map((repo) => (
+            <div
+              key={repo.name}
+              className="p-5 rounded-2xl stealth-card flex flex-col justify-between group border border-white/5 hover:border-cyan-500/30 transition-all"
+            >
+              <div>
+                <div className="flex items-start justify-between gap-2 mb-2">
                   <a
-                    href={repo.homepage}
+                    href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-mono border border-zinc-800 transition-colors"
+                    className="font-bold text-sm text-white hover:text-cyan-300 transition-colors flex items-center gap-2 font-mono min-w-0"
                   >
-                    <span>Launch Live App</span>
-                    <ArrowUpRight size={12} />
+                    <FolderGit2 size={15} className="text-zinc-500 shrink-0" />
+                    <span className="truncate">{repo.name}</span>
+                  </a>
+                  <a
+                    href={repo.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1 text-zinc-600 hover:text-white transition-colors shrink-0"
+                  >
+                    <ExternalLink size={13} />
                   </a>
                 </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
 
-    </div>
+                <p className="text-xs text-zinc-500 line-clamp-2 leading-relaxed mb-4">
+                  {repo.description || 'Public engineering repository by Saiyam Jain.'}
+                </p>
+              </div>
+
+              <div>
+                <div className="pt-3 border-t border-zinc-900 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+                  {repo.language ? (
+                    <span className="text-zinc-300 font-semibold">{repo.language}</span>
+                  ) : (
+                    <span>Code</span>
+                  )}
+
+                  <div className="flex items-center gap-3">
+                    {repo.stargazers_count > 0 && (
+                      <span className="flex items-center gap-1 text-amber-400">
+                        <Star size={11} className="fill-amber-400" />
+                        {repo.stargazers_count}
+                      </span>
+                    )}
+                    {repo.forks_count > 0 && (
+                      <span className="flex items-center gap-1 text-zinc-500">
+                        <GitFork size={11} />
+                        {repo.forks_count}
+                      </span>
+                    )}
+                    <span className="flex items-center gap-1 text-zinc-600">
+                      <Clock size={11} />
+                      {formatRelativeTime(repo.updated_at)}
+                    </span>
+                  </div>
+                </div>
+
+                {repo.homepage && (
+                  <div className="mt-3 pt-2">
+                    <a
+                      href={repo.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-mono border border-zinc-800 transition-colors"
+                    >
+                      <span>Launch Live App</span>
+                      <ArrowUpRight size={12} />
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
   );
 }
