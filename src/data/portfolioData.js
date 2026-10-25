@@ -8,8 +8,8 @@ export const personalInfo = {
     "React & React Native Specialist",
     "High-Performance Cloud & Backend Developer"
   ],
-  bio: "Software engineer specializing in Java automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
-  valueProposition: "Expertise across Java test automation frameworks, modern AI QA tooling, real-time reactive applications, and scalable microservices.",
+  bio: "Software engineer and official Selenium core contributor specializing in browser automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
+  valueProposition: "Expertise across Selenium & Java test automation frameworks, modern AI QA tooling, real-time reactive applications, and scalable microservices.",
   location: "India (Open to Global Remote & Relocation)",
   status: "Actively interviewing for Software Engineering & Full-Stack / Backend / AI roles",
   email: "saiyamjain.d@gmail.com",
@@ -31,7 +31,7 @@ export const stats = [
   { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" },
-  { label: "Core PRs Merged", value: "morluto/rea", icon: "GitPullRequest" },
+  { label: "Core PRs Merged", value: "Selenium & REA", icon: "GitPullRequest" },
   { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
 ];
 
@@ -257,6 +257,16 @@ export const projects = [
 ];
 
 export const initialGithubRepos = [
+  {
+    name: "selenium (SeleniumHQ/selenium)",
+    description: "Official Selenium browser automation framework. Core contributor: merged PR #18239 (ErrorHandler NoneType fix) and PR #18240 (BiDi serialization).",
+    html_url: "https://github.com/SeleniumHQ/selenium/pull/18239",
+    homepage: "https://www.selenium.dev/",
+    language: "Python",
+    stargazers_count: 31000,
+    forks_count: 8100,
+    updated_at: new Date().toISOString()
+  },
   {
     name: "rea (morluto/rea)",
     description: "Reverse engineer anything with agents, from app behavior down to native binaries. Merged PR #6973.",

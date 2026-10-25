@@ -23,6 +23,13 @@ He is a polyglot software engineer with:
 4. Scalable data layers (MongoDB, PostgreSQL, MySQL, Redis, Firebase).
 5. 44+ active repositories on GitHub with verified daily continuous commits.`,
 
+  opensource: `Open Source Contributions & Impact:
+• Selenium (SeleniumHQ/selenium) — Core Contributor:
+  - PR #18239 (Merged into trunk by Cory Goldberg): Hardened ErrorHandler.check_response() against fatal TypeError and KeyError exceptions when remote drivers return None or missing error payloads.
+  - PR #18240 (Active): Enforced W3C WebDriver BiDi protocol conformance by rejecting null list elements across serialization channels (104/104 tests passing).
+• REA (morluto/rea) — Core Contributor:
+  - PR #6973 (Merged): Expanded Erlang BEAM view queries and acceptance regression test suites across 31,000+ test shard runner.`,
+
   java: `Java & Automation Testing (2+ Years):
 Saiyam specializes in Java automation testing frameworks (Selenium, TestNG), modern AI-augmented QA tools, object-oriented software design, concurrency patterns, and RESTful microservices. His BCA background (7.5 CGPA) provided rigorous foundation in data structures, algorithms, and high-reliability systems testing.`,
 
@@ -62,7 +69,7 @@ export default function AICopilot({ isOpen, onClose }) {
   const [messages, setMessages] = useState([
     {
       sender: 'ai',
-      text: "Hello! I am Saiyam's AI Agent (v2.6). I can answer anything about his 2+ years of Java experience, GenAI & full-stack development, projects, or why he can build anything your team needs.",
+      text: "Hello! I am Saiyam's AI Agent (v2.6). I can answer anything about his Selenium open-source contributions, 2+ years of Java experience, GenAI & full-stack development, projects, or why he can build anything your team needs.",
       timestamp: 'Online'
     }
   ]);
@@ -89,7 +96,9 @@ export default function AICopilot({ isOpen, onClose }) {
       const lower = query.toLowerCase();
       let reply = "";
 
-      if (lower.includes('java') || lower.includes('2 year') || lower.includes('spring') || lower.includes('backend')) {
+      if (lower.includes('open source') || lower.includes('selenium') || lower.includes('contribution') || lower.includes('oss') || lower.includes('pr')) {
+        reply = aiKnowledgeBase.opensource;
+      } else if (lower.includes('java') || lower.includes('2 year') || lower.includes('spring') || lower.includes('backend')) {
         reply = aiKnowledgeBase.java;
       } else if (lower.includes('genai') || lower.includes('ai') || lower.includes('llm') || lower.includes('reelai')) {
         reply = aiKnowledgeBase.genai;
