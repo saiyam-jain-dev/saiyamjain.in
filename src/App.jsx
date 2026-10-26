@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -14,13 +14,33 @@ import SexyInteractivePointer from './components/SexyInteractivePointer';
 import MusicPlayer from './components/MusicPlayer';
 import ScrollToTop from './components/ScrollToTop';
 import KonamiEasterEgg from './components/KonamiEasterEgg';
+import CyberGame from './components/CyberGame';
 import { Bot, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [isAIOpen, setIsAIOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState(() => 
+    typeof window !== 'undefined' ? window.location.pathname.toLowerCase() : '/'
+  );
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname.toLowerCase());
+    };
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  const navigate = (path) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path.toLowerCase());
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const isGameRoute = currentPath === '/game' || currentPath === '/game/' || (typeof window !== 'undefined' && window.location.hash === '#/game');
 
   // Global Cmd+K or Ctrl+K shortcut to toggle AI Copilot
-  React.useEffect(() => {
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
@@ -30,6 +50,15 @@ export default function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  if (isGameRoute) {
+    return (
+      <div className="relative min-h-screen bg-black text-zinc-100 selection:bg-cyan-500 selection:text-black overflow-x-hidden">
+        <SexyInteractivePointer />
+        <CyberGame onBack={() => navigate('/')} />
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-black text-zinc-100 selection:bg-cyan-500 selection:text-black overflow-x-hidden">
@@ -41,7 +70,11 @@ export default function App() {
       <SexyInteractivePointer />
 
       {/* Modern 2026 Stealth Navbar */}
-      <Navbar onOpenAI={() => setIsAIOpen(true)} />
+      <Navbar 
+        onOpenAI={() => setIsAIOpen(true)} 
+        onNavigate={navigate}
+        currentPath={currentPath}
+      />
 
       {/* Developer Konami Code Easter Egg */}
       <KonamiEasterEgg />

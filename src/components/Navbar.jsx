@@ -3,7 +3,7 @@ import { Menu, X, ArrowUpRight, Bot } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
-export default function Navbar({ onOpenAI }) {
+export default function Navbar({ onOpenAI, onNavigate, currentPath = '/' }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -15,6 +15,7 @@ export default function Navbar({ onOpenAI }) {
     { label: 'Stack', href: '#skills' },
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
+    { label: 'Arcade 🎮', href: '/game', isRoute: true },
   ];
 
   useEffect(() => {
@@ -49,6 +50,12 @@ export default function Navbar({ onOpenAI }) {
         {/* Brand */}
         <a 
           href="#hero" 
+          onClick={(e) => {
+            if (currentPath.includes('/game') && onNavigate) {
+              e.preventDefault();
+              onNavigate('/');
+            }
+          }}
           className="flex items-center gap-2.5 group cursor-pointer"
         >
           <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-black text-xs tracking-tighter shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:scale-105 transition-transform duration-200">
@@ -67,11 +74,23 @@ export default function Navbar({ onOpenAI }) {
         {/* Center Nav */}
         <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-1 bg-zinc-950/80 px-3.5 py-1.5 rounded-full border border-white/10 shadow-2xl backdrop-blur-xl">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.replace('#', '');
+            const isGame = link.isRoute;
+            const isActive = isGame 
+              ? currentPath.includes('/game')
+              : !currentPath.includes('/game') && activeSection === link.href.replace('#', '');
             return (
               <a
                 key={link.label}
                 href={link.href}
+                onClick={(e) => {
+                  if (link.isRoute && onNavigate) {
+                    e.preventDefault();
+                    onNavigate(link.href);
+                  } else if (currentPath.includes('/game') && onNavigate) {
+                    e.preventDefault();
+                    onNavigate('/' + link.href);
+                  }
+                }}
                 className={`px-3.5 py-1 text-xs font-mono font-semibold rounded-full transition-all duration-200 ${
                   isActive
                     ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md'
@@ -161,7 +180,16 @@ export default function Navbar({ onOpenAI }) {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (link.isRoute && onNavigate) {
+                    e.preventDefault();
+                    onNavigate(link.href);
+                  } else if (currentPath.includes('/game') && onNavigate) {
+                    e.preventDefault();
+                    onNavigate('/' + link.href);
+                  }
+                }}
                 className="px-3 py-2 rounded-xl text-xs font-mono font-medium text-zinc-300 hover:text-white hover:bg-zinc-900"
               >
                 {link.label}
