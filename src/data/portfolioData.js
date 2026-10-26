@@ -31,7 +31,7 @@ export const stats = [
   { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" },
-  { label: "Core PRs Merged", value: "Selenium & REA", icon: "GitPullRequest" },
+  { label: "Core PRs Merged", value: "2x Selenium & REA", icon: "GitPullRequest" },
   { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
 ];
 
@@ -259,7 +259,7 @@ export const projects = [
 export const initialGithubRepos = [
   {
     name: "selenium (SeleniumHQ/selenium)",
-    description: "Official Selenium browser automation framework. Core contributor: merged PR #18239 (ErrorHandler NoneType fix) and PR #18240 (BiDi serialization).",
+    description: "Official Selenium browser automation framework. Core contributor: merged PR #18239 (ErrorHandler fix) and PR #18238 (RFC 6265 cookie matching).",
     html_url: "https://github.com/SeleniumHQ/selenium/pull/18239",
     homepage: "https://www.selenium.dev/",
     language: "Python",

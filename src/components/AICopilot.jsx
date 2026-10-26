@@ -25,7 +25,8 @@ He is a polyglot software engineer with:
 
   opensource: `Open Source Contributions & Impact:
 • Selenium (SeleniumHQ/selenium) — Core Contributor:
-  - PR #18239 (Merged into trunk by Cory Goldberg): Hardened ErrorHandler.check_response() against fatal TypeError and KeyError exceptions when remote drivers return None or missing error payloads.
+  - PR #18239 (Merged into trunk by Corey Goldberg): Hardened ErrorHandler.check_response() against fatal TypeError and KeyError exceptions when remote drivers return None or missing error payloads.
+  - PR #18238 (Merged into trunk by Corey Goldberg): Aligned APIRequestContext cookie matching with RFC 6265 specs (case-insensitive domain matching, subdomain resolution, trailing slash paths).
   - PR #18240 (Active): Enforced W3C WebDriver BiDi protocol conformance by rejecting null list elements across serialization channels (104/104 tests passing).
 • REA (morluto/rea) — Core Contributor:
   - PR #6973 (Merged): Expanded Erlang BEAM view queries and acceptance regression test suites across 31,000+ test shard runner.`,

@@ -30,22 +30,33 @@ export default function OpenSourceSection() {
               href="https://github.com/SeleniumHQ/selenium/pull/18239"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
             >
-              <GitPullRequest size={14} className="text-emerald-400" />
+              <GitPullRequest size={13} className="text-emerald-400" />
               <span>Selenium PR #18239 Merged</span>
-              <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
+            <a
+              href="https://github.com/SeleniumHQ/selenium/pull/18238"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GitPullRequest size={13} className="text-emerald-400" />
+              <span>Selenium PR #18238 Merged</span>
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
             <a
               href="https://github.com/morluto/rea/pull/6973"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
             >
-              <GitPullRequest size={14} className="text-purple-400" />
+              <GitPullRequest size={13} className="text-purple-400" />
               <span>REA PR #6973 Merged</span>
-              <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </div>
@@ -60,20 +71,20 @@ export default function OpenSourceSection() {
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   <CheckCircle2 size={13} className="text-emerald-400" />
-                  Merged into Trunk (PR #18239)
+                  2 PRs Merged into Trunk
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                   <GitPullRequest size={13} className="text-cyan-400" />
-                  Under Review (PR #18240)
+                  Active PRs (#18240 & #18237)
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">
                   Python WebDriver Core
                 </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                  RFC 6265 Cookie Engine
+                </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
                   W3C WebDriver BiDi
-                </span>
-                <span className="px-3 py-1 rounded-full text-xs font-mono bg-zinc-800/70 text-zinc-400 border border-zinc-700/50">
-                  104/104 Unit Tests Passing
                 </span>
               </div>
 
@@ -97,15 +108,32 @@ export default function OpenSourceSection() {
                 </p>
               </div>
 
-              <p className="text-sm text-zinc-300 leading-relaxed">
-                Core contributor to the official <strong>Selenium</strong> Python WebDriver codebase. Hardened <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">ErrorHandler.check_response()</code> against fatal <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">TypeError</code> (&quot;argument of type &apos;NoneType&apos; is not iterable&quot;) and unhandled <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">KeyError</code> exceptions when remote drivers return <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">None</code> or omit error payloads (<a href="https://github.com/SeleniumHQ/selenium/pull/18239" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline decoration-emerald-500/40 hover:decoration-emerald-400">PR #18239</a>, merged directly into trunk by core maintainer Cory Goldberg). Enforced strict W3C WebDriver BiDi protocol conformance by validating null list elements in inbound and outbound serialization (<a href="https://github.com/SeleniumHQ/selenium/pull/18240" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline decoration-cyan-500/40 hover:decoration-cyan-400">PR #18240</a>).
-              </p>
+              <div className="space-y-2 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  Core contributor to the official <strong>Selenium</strong> Python WebDriver codebase with multiple contributions merged directly into trunk by core maintainer Corey Goldberg:
+                </p>
+                <ul className="list-disc list-inside space-y-1.5 text-zinc-300 pl-1">
+                  <li>
+                    <strong className="text-white">PR #18239 (Merged):</strong> Hardened <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">ErrorHandler.check_response()</code> against fatal <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">TypeError</code> (&quot;argument of type &apos;NoneType&apos; is not iterable&quot;) and unhandled <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">KeyError</code> exceptions when remote drivers return <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">None</code> or omit error dictionaries.
+                  </li>
+                  <li>
+                    <strong className="text-white">PR #18238 (Merged):</strong> Aligned <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">APIRequestContext._cookie_matches()</code> with RFC 6265 HTTP State Management, implementing case-insensitive domain matching, optional leading dot handling across subdomains (&sect;5.1.3), and trailing slash path resolution (&sect;5.1.4).
+                  </li>
+                  <li>
+                    <strong className="text-white">PR #18240 (Active):</strong> Strengthened W3C WebDriver BiDi protocol conformance by enforcing null list element rejection in inbound and outbound serialization.
+                  </li>
+                </ul>
+              </div>
 
               {/* Verified Checklist */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span>Merged directly into upstream trunk by core maintainer Cory Goldberg</span>
+                  <span>2 PRs merged directly into upstream trunk by maintainer Corey Goldberg</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
+                  <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                  <span>Aligned APIRequestContext cookie matching with RFC 6265 spec</span>
                 </div>
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
@@ -113,59 +141,68 @@ export default function OpenSourceSection() {
                 </div>
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span>Enforced W3C WebDriver BiDi protocol serialization invariants</span>
-                </div>
-                <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
-                  <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span>104/104 unit tests passing with strict Ruff linting compliance</span>
+                  <span>100% CI pass rate with strict Ruff & MyPy compliance</span>
                 </div>
               </div>
             </div>
 
             {/* Right Side Stats / Actions */}
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 lg:w-64 pt-2 lg:pt-0">
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0 lg:w-64 pt-2 lg:pt-0">
               <a
                 href="https://github.com/SeleniumHQ/selenium/pull/18239"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-emerald-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+                className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-emerald-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <GitPullRequest size={16} className="text-emerald-400" />
+                  <GitPullRequest size={15} className="text-emerald-400" />
                   <span className="font-bold">Inspect PR #18239</span>
                 </div>
-                <ArrowUpRight size={14} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
+                <ArrowUpRight size={13} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
               </a>
 
               <a
                 href="https://github.com/SeleniumHQ/selenium/commit/652351eaef7a06da2e9fc9e32a688b75373a25cb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-cyan-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-950/80 hover:bg-zinc-900/90 border border-zinc-800 hover:border-cyan-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <Terminal size={16} className="text-cyan-400" />
-                  <span className="font-bold">Merge Commit</span>
+                  <Terminal size={14} className="text-cyan-400" />
+                  <span className="font-semibold text-zinc-300">Commit #18239</span>
                 </div>
                 <span className="text-[11px] text-zinc-500 group-hover/btn:text-cyan-300 font-mono">652351e</span>
               </a>
 
               <a
-                href="https://github.com/SeleniumHQ/selenium/pull/18240"
+                href="https://github.com/SeleniumHQ/selenium/pull/18238"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-blue-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+                className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-emerald-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <GitPullRequest size={16} className="text-blue-400" />
-                  <span className="font-bold">Inspect PR #18240</span>
+                  <GitPullRequest size={15} className="text-emerald-400" />
+                  <span className="font-bold">Inspect PR #18238</span>
                 </div>
-                <ArrowUpRight size={14} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
+                <ArrowUpRight size={13} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
               </a>
 
-              <div className="p-3.5 rounded-xl bg-zinc-950/60 border border-zinc-900 text-xs font-mono text-zinc-400 space-y-1">
+              <a
+                href="https://github.com/SeleniumHQ/selenium/commit/e21558f2c7547ce42ed5db2c9ab15fbca8de2b84"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-950/80 hover:bg-zinc-900/90 border border-zinc-800 hover:border-cyan-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <Terminal size={14} className="text-cyan-400" />
+                  <span className="font-semibold text-zinc-300">Commit #18238</span>
+                </div>
+                <span className="text-[11px] text-zinc-500 group-hover/btn:text-cyan-300 font-mono">e21558f</span>
+              </a>
+
+              <div className="p-3 rounded-xl bg-zinc-950/60 border border-zinc-900 text-xs font-mono text-zinc-400 space-y-1">
                 <div className="text-[10px] uppercase text-zinc-500 tracking-wider font-bold">Tech Stack</div>
-                <div className="text-zinc-300 font-semibold">Python • WebDriver • W3C BiDi • Ruff • PyTest</div>
+                <div className="text-zinc-300 font-semibold">Python • WebDriver • RFC 6265 • BiDi • PyTest</div>
               </div>
             </div>
 
