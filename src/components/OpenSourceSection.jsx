@@ -92,7 +92,7 @@ export default function OpenSourceSection() {
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                   <CheckCircle2 size={13} className="text-cyan-400" />
-                  2 PRs Merged into Trunk by Meta
+                  5 PRs Merged into Trunk by Meta
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   <GitPullRequest size={13} className="text-emerald-400" />
@@ -248,7 +248,7 @@ export default function OpenSourceSection() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                   <GitPullRequest size={13} className="text-cyan-400" />
-                  Active PRs (#18240 & #18237)
+                  Active PR (#18240)
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">
                   Python WebDriver Core

@@ -31,7 +31,7 @@ export const stats = [
   { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" },
-  { label: "Core PRs Merged", value: "React Native, Selenium, SymPy & REA", icon: "GitPullRequest" },
+  { label: "Core PRs Merged", value: "React Native, Selenium (5 PRs) & REA", icon: "GitPullRequest" },
   { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
 ];
 
@@ -265,16 +265,6 @@ export const initialGithubRepos = [
     language: "JavaScript",
     stargazers_count: 121000,
     forks_count: 24500,
-    updated_at: new Date().toISOString()
-  },
-  {
-    name: "sympy (sympy/sympy)",
-    description: "Pure Python computer algebra system. Merged PR #30851 (Mathematica code generator for Heaviside, DiracDelta, elliptic_f).",
-    html_url: "https://github.com/sympy/sympy/pull/30851",
-    homepage: "https://www.sympy.org/",
-    language: "Python",
-    stargazers_count: 13000,
-    forks_count: 4600,
     updated_at: new Date().toISOString()
   },
   {
