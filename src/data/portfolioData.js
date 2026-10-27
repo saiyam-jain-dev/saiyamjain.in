@@ -8,7 +8,7 @@ export const personalInfo = {
     "React & React Native Specialist",
     "High-Performance Cloud & Backend Developer"
   ],
-  bio: "Software engineer and official Selenium core contributor specializing in browser automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
+  bio: "Software engineer and official core contributor to React Native (Meta) and Selenium, specializing in browser automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
   valueProposition: "Expertise across Selenium & Java test automation frameworks, modern AI QA tooling, real-time reactive applications, and scalable microservices.",
   location: "India (Open to Global Remote & Relocation)",
   status: "Actively interviewing for Software Engineering & Full-Stack / Backend / AI roles",
@@ -31,7 +31,7 @@ export const stats = [
   { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" },
-  { label: "Core PRs Merged", value: "2x Selenium & REA", icon: "GitPullRequest" },
+  { label: "Core PRs Merged", value: "React Native, Selenium & REA", icon: "GitPullRequest" },
   { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
 ];
 

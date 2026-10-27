@@ -120,7 +120,7 @@ export default function Hero({ onOpenAI }) {
               </span>
               <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-zinc-900/90 border border-amber-500/30 text-amber-300 flex items-center gap-1.5">
                 <Zap size={13} className="shrink-0" />
-                React Native
+                React Native Core Contributor
               </span>
             </div>
 

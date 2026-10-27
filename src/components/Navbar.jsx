@@ -15,7 +15,6 @@ export default function Navbar({ onOpenAI, onNavigate, currentPath = '/' }) {
     { label: 'Stack', href: '#skills' },
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
-    { label: 'Arcade 🎮', href: '/game', isRoute: true },
   ];
 
   useEffect(() => {

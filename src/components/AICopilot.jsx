@@ -70,7 +70,7 @@ export default function AICopilot({ isOpen, onClose }) {
   const [messages, setMessages] = useState([
     {
       sender: 'ai',
-      text: "Hello! I am Saiyam's AI Agent (v2.6). I can answer anything about his Selenium open-source contributions, 2+ years of Java experience, GenAI & full-stack development, projects, or why he can build anything your team needs.",
+      text: "Hello! I am Saiyam's AI Agent (v2.6). I can answer anything about his React Native (Meta) & Selenium open-source contributions, 2+ years of Java experience, GenAI & full-stack development, projects, or why he can build anything your team needs.",
       timestamp: 'Online'
     }
   ]);
@@ -97,7 +97,7 @@ export default function AICopilot({ isOpen, onClose }) {
       const lower = query.toLowerCase();
       let reply = "";
 
-      if (lower.includes('open source') || lower.includes('selenium') || lower.includes('contribution') || lower.includes('oss') || lower.includes('pr')) {
+      if (lower.includes('open source') || lower.includes('selenium') || lower.includes('react') || lower.includes('react-native') || lower.includes('contribution') || lower.includes('oss') || lower.includes('pr')) {
         reply = aiKnowledgeBase.opensource;
       } else if (lower.includes('java') || lower.includes('2 year') || lower.includes('spring') || lower.includes('backend')) {
         reply = aiKnowledgeBase.java;
