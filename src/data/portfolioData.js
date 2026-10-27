@@ -31,7 +31,7 @@ export const stats = [
   { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" },
-  { label: "Core PRs Merged", value: "React Native, Selenium & REA", icon: "GitPullRequest" },
+  { label: "Core PRs Merged", value: "React Native, Selenium, SymPy & REA", icon: "GitPullRequest" },
   { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
 ];
 
@@ -258,6 +258,26 @@ export const projects = [
 
 export const initialGithubRepos = [
   {
+    name: "react-native (facebook/react-native)",
+    description: "Meta's official cross-platform framework. Merged PR #59458 (package README URLs) & PR #59459 (virtualized-lists runtime invariant fixes).",
+    html_url: "https://github.com/react/react-native/pull/59459",
+    homepage: "https://reactnative.dev/",
+    language: "JavaScript",
+    stargazers_count: 121000,
+    forks_count: 24500,
+    updated_at: new Date().toISOString()
+  },
+  {
+    name: "sympy (sympy/sympy)",
+    description: "Pure Python computer algebra system. Merged PR #30851 (Mathematica code generator for Heaviside, DiracDelta, elliptic_f).",
+    html_url: "https://github.com/sympy/sympy/pull/30851",
+    homepage: "https://www.sympy.org/",
+    language: "Python",
+    stargazers_count: 13000,
+    forks_count: 4600,
+    updated_at: new Date().toISOString()
+  },
+  {
     name: "selenium (SeleniumHQ/selenium)",
     description: "Official Selenium browser automation framework. Core contributor: merged PR #18239 (ErrorHandler fix) and PR #18238 (RFC 6265 cookie matching).",
     html_url: "https://github.com/SeleniumHQ/selenium/pull/18239",
@@ -269,7 +289,7 @@ export const initialGithubRepos = [
   },
   {
     name: "rea (morluto/rea)",
-    description: "Reverse engineer anything with agents, from app behavior down to native binaries. Merged PR #6973.",
+    description: "Reverse engineer anything with agents. Merged PR #6973 (BEAM views) & PR #7097 (export paths).",
     html_url: "https://github.com/morluto/rea/pull/6973",
     homepage: "https://github.com/morluto/rea",
     language: "TypeScript",

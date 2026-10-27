@@ -27,6 +27,27 @@ export default function OpenSourceSection() {
 
           <div className="flex flex-wrap items-center gap-2.5 self-start md:self-auto">
             <a
+              href="https://github.com/react/react-native/pull/59458"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GitPullRequest size={13} className="text-cyan-400" />
+              <span>React Native #59458 Merged</span>
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
+            <a
+              href="https://github.com/react/react-native/pull/59459"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GitPullRequest size={13} className="text-cyan-400" />
+              <span>React Native #59459 Merged</span>
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+            <a
               href="https://github.com/SeleniumHQ/selenium/pull/18239"
               target="_blank"
               rel="noopener noreferrer"
@@ -71,11 +92,11 @@ export default function OpenSourceSection() {
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                   <CheckCircle2 size={13} className="text-cyan-400" />
-                  Merged into Trunk by Meta
+                  2 PRs Merged into Trunk by Meta
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   <GitPullRequest size={13} className="text-emerald-400" />
-                  Active PRs (#59460, #59459, #59457)
+                  Active PRs (#59460 & #59457)
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">
                   Meta Open Source
@@ -120,7 +141,10 @@ export default function OpenSourceSection() {
                     <strong className="text-white">PR #59460 (Active):</strong> Engineered missing unit test coverage for <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">CellRenderMask.numCells()</code> and equality validation in <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">virtualized-lists</code>.
                   </li>
                   <li>
-                    <strong className="text-white">PR #59459 &amp; #59457 (Active):</strong> Resolved typos in user-facing invariant error messages and rectified JSDoc typing inconsistencies in list windowing algorithms.
+                    <strong className="text-white">PR #59459 (Merged):</strong> Corrected typos in user-facing runtime invariant assertion messages in <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-cyan-300">virtualized-lists</code> (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-cyan-300">866034f</code>). Imported via Meta internal Differential D127799190 and merged directly into trunk by Meta engineer Nicola Corti.
+                  </li>
+                  <li>
+                    <strong className="text-white">PR #59457 (Active):</strong> Rectified JSDoc typing inconsistencies and parameters in list windowing algorithms.
                   </li>
                 </ul>
               </div>
@@ -159,6 +183,32 @@ export default function OpenSourceSection() {
                   <span className="font-bold">Inspect PR #59458</span>
                 </div>
                 <ArrowUpRight size={13} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
+              </a>
+
+              <a
+                href="https://github.com/react/react-native/pull/59459"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-cyan-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <GitPullRequest size={15} className="text-cyan-400" />
+                  <span className="font-bold">Inspect PR #59459</span>
+                </div>
+                <ArrowUpRight size={13} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
+              </a>
+
+              <a
+                href="https://github.com/react/react-native/commit/866034f97c1c80107fe5fd7a9dce33eb338fe238"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-950/80 hover:bg-zinc-900/90 border border-zinc-800 hover:border-cyan-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <Terminal size={14} className="text-cyan-400" />
+                  <span className="font-semibold text-zinc-300">Commit #59459</span>
+                </div>
+                <span className="text-[11px] text-zinc-500 group-hover/btn:text-cyan-300 font-mono">866034f</span>
               </a>
 
               <a
