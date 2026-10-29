@@ -156,17 +156,17 @@ export default function Hero({ onOpenAI }) {
             </div>
 
             {/* Telemetry Stats Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full pt-4 border-t border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full pt-5 border-t border-white/10">
               {stats.map((stat, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl transition-all shadow-md group hover:-translate-y-0.5"
+                  className="p-3.5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 backdrop-blur-xl transition-all shadow-md group hover:-translate-y-0.5 flex flex-col justify-between min-h-[80px]"
                 >
-                  <div className="text-2xl sm:text-3xl font-black font-mono text-white mb-0.5 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
+                  <div className="text-2xl sm:text-3xl font-black font-mono text-white mb-1 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
                     <span>{stat.value}</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 opacity-60" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 opacity-80 animate-pulse" />
                   </div>
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-400">
+                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-medium">
                     {stat.label}
                   </div>
                 </div>

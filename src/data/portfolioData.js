@@ -15,7 +15,7 @@ export const personalInfo = {
   email: "saiyamjain.d@gmail.com",
   github: "https://github.com/saiyam-jain-dev",
   githubUsername: "saiyam-jain-dev",
-  linkedin: "https://www.linkedin.com/in/itzsamdev/",
+  linkedin: "https://www.linkedin.com/in/saiyam-jain-d/",
   twitter: "https://twitter.com/_Samdev_",
   instagram: "https://www.instagram.com/saiyamjainn__/",
   resumeUrl: "https://drive.google.com/file/d/1RZjlYBWEqFdFrYwpol0yKkb6Yn2bGO55/view?usp=drive_link",
@@ -28,11 +28,10 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { label: "Java & Automation Depth", value: "2+ Yrs", icon: "Code2" },
+  { label: "Java & Systems Depth", value: "2+ Yrs", icon: "Code2" },
+  { label: "Tier-1 Upstream PRs", value: "12+", icon: "GitPullRequest" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
-  { label: "Shipped Projects", value: "14+", icon: "Cpu" },
-  { label: "Core PRs Merged", value: "React Native, Selenium (5 PRs) & REA", icon: "GitPullRequest" },
-  { label: "Tech Stack & Tools", value: "24+", icon: "Layers" }
+  { label: "Shipped Projects", value: "14+", icon: "Cpu" }
 ];
 
 export const skillCategories = [
