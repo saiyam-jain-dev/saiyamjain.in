@@ -54,14 +54,16 @@ npm run build
 
 ---
 
-## 🚀 Netlify Deployment
+## 🚀 Deployment (Vercel & Netlify)
 
-1. Connect the `saiyam-jain-dev/saiyamjain.in` repository in Netlify.
-2. Build configurations are pre-defined in `netlify.toml`:
-   * **Build Command**: `npm run build`
-   * **Publish Directory**: `dist`
-   * **SPA Redirects**: `/* -> /index.html 200`
-   * **Security Headers**: HSTS, X-Frame-Options, X-Content-Type-Options, and immutable 1-year asset caching.
+### Vercel (Recommended)
+1. Import `saiyam-jain-dev/saiyamjain.in` in Vercel.
+2. Configuration is defined in `vercel.json` (SPA rewrites, security headers, immutable caching).
+3. Connect custom domain `saiyamjain.in`.
+
+### Netlify
+1. Connect `saiyam-jain-dev/saiyamjain.in` in Netlify.
+2. Build configurations and headers are defined in `netlify.toml`.
 
 ---
 
