@@ -21,7 +21,7 @@ export default function OpenSourceSection() {
               Open Source Contributions
             </h2>
             <p className="text-sm text-zinc-400 font-mono mt-1">
-              Verified upstream code accepted and reviewed across Meta's React Native, Selenium, Babel, CPython, OpenTelemetry, and REA.
+              Verified upstream code accepted and reviewed across Meta's React Native, NestJS, Selenium, Babel, CPython, OpenTelemetry, and REA.
             </p>
           </div>
 
@@ -38,13 +38,24 @@ export default function OpenSourceSection() {
             </a>
 
             <a
+              href="https://github.com/nestjs/nest/pull/18372"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GitPullRequest size={13} className="text-rose-400" />
+              <span>NestJS #18372 Merged</span>
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
+            <a
               href="https://github.com/SeleniumHQ/selenium/pull/18239"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
             >
               <GitPullRequest size={13} className="text-emerald-400" />
-              <span>Selenium (5 Merged)</span>
+              <span>Selenium (7 Merged)</span>
               <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
@@ -202,6 +213,107 @@ export default function OpenSourceSection() {
           </div>
         </div>
 
+        {/* Contribution: nestjs / nest */}
+        <div className="relative rounded-2xl bg-gradient-to-b from-zinc-900/80 to-zinc-950/90 border border-zinc-800/80 hover:border-rose-500/40 p-6 sm:p-8 transition-all duration-300 shadow-2xl group">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <div className="space-y-4 max-w-3xl">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-500/15 text-rose-300 border border-rose-500/30">
+                  <CheckCircle2 size={13} className="text-rose-400" />
+                  Merged into Master
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-300 border border-red-500/20">
+                  Enterprise Node.js Framework
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                  @nestjs/platform-express
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                  View Engine Resolution
+                </span>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-rose-300 transition-colors">
+                    nestjs / nest
+                  </h3>
+                  <a
+                    href="https://github.com/nestjs/nest"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-500 hover:text-white transition-colors"
+                    title="View Repository"
+                  >
+                    <GithubIcon size={20} />
+                  </a>
+                </div>
+                <p className="text-sm text-rose-400/90 font-mono mt-0.5">
+                  A progressive Node.js framework for building efficient, reliable, and scalable server-side applications (67k+ stars)
+                </p>
+              </div>
+
+              <div className="space-y-2 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  Official contributor to <strong>NestJS</strong>, the leading enterprise TypeScript/Node.js framework:
+                </p>
+                <ul className="list-disc list-inside space-y-1.5 text-zinc-300 pl-1">
+                  <li>
+                    <strong className="text-white">PR #18372 (Merged):</strong> Stripped trailing slashes when resolving view names in <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-rose-300">@nestjs/platform-express</code> (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-rose-300">955099d</code>). Ensured view lookups like <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">@Render('users/')</code> correctly resolve to <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-rose-300">users/index.ejs</code> instead of throwing malformed extension errors.
+                  </li>
+                  <li>
+                    Added automated test cases covering trailing slash view resolution in NestJS express view adapter suites.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
+                  <ShieldCheck size={14} className="text-rose-400 mt-0.5 shrink-0" />
+                  <span>Merged into nestjs/nest master branch with passing CI suites</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
+                  <ShieldCheck size={14} className="text-rose-400 mt-0.5 shrink-0" />
+                  <span>Resolves trailing slash path parity with native Express render engines</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0 lg:w-64 pt-2 lg:pt-0">
+              <a
+                href="https://github.com/nestjs/nest/pull/18372"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-rose-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <GitPullRequest size={15} className="text-rose-400" />
+                  <span className="font-bold">Inspect PR #18372</span>
+                </div>
+                <ArrowUpRight size={13} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
+              </a>
+
+              <a
+                href="https://github.com/nestjs/nest/commit/955099d8ccf9dc743c01df730c0ed4b629875242"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-950/80 hover:bg-zinc-900/90 border border-zinc-800 hover:border-rose-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <Terminal size={14} className="text-rose-400" />
+                  <span className="font-semibold text-zinc-300">Commit 955099d</span>
+                </div>
+                <span className="text-[11px] text-zinc-500 group-hover/btn:text-rose-300 font-mono">Master</span>
+              </a>
+
+              <div className="p-3 rounded-xl bg-zinc-950/60 border border-zinc-900 text-xs font-mono text-zinc-400 space-y-1">
+                <div className="text-[10px] uppercase text-zinc-500 tracking-wider font-bold">Tech Stack</div>
+                <div className="text-zinc-300 font-semibold">TypeScript • NestJS • Node.js • Express • Jest</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Contribution 2: SeleniumHQ / selenium */}
         <div className="relative rounded-2xl bg-gradient-to-b from-zinc-900/80 to-zinc-950/90 border border-zinc-800/80 hover:border-emerald-500/40 p-6 sm:p-8 transition-all duration-300 shadow-2xl group">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
@@ -209,7 +321,7 @@ export default function OpenSourceSection() {
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   <CheckCircle2 size={13} className="text-emerald-400" />
-                  5 PRs Merged into Trunk
+                  7 PRs Merged into Trunk
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">
                   Python WebDriver Core
@@ -248,13 +360,19 @@ export default function OpenSourceSection() {
                 </p>
                 <ul className="list-disc list-inside space-y-1.5 text-zinc-300 pl-1">
                   <li>
+                    <strong className="text-white">PR #18272 (Merged):</strong> Validated declared numeric bounds during JavaScript BiDi serialization and deserialization, holding numbers to declared ranges (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">ac7a079</code>).
+                  </li>
+                  <li>
+                    <strong className="text-white">PR #18240 (Merged):</strong> Enforced strict null list element rejection in both inbound and outbound BiDi protocol serialization (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">8a6aefc</code>).
+                  </li>
+                  <li>
                     <strong className="text-white">PR #18239 (Merged):</strong> Hardened <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">ErrorHandler.check_response()</code> against fatal <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">TypeError</code> crashes when remote browser drivers return <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">None</code> or omit error dictionaries (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">652351e</code>).
                   </li>
                   <li>
                     <strong className="text-white">PR #18238 (Merged):</strong> Aligned cookie domain and path matching with the RFC 6265 specification, handling case-insensitive comparison and leading dot subdomain rules (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">e21558f</code>).
                   </li>
                   <li>
-                    <strong className="text-white">PR #18244 &amp; #18243 (Merged):</strong> Added explicit stacklevels for caller-accurate warnings and implemented <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">__hash__</code> contracts for pinned script identifiers.
+                    <strong className="text-white">PR #18244 &amp; #18243 &amp; #18237 (Merged):</strong> Added explicit stacklevels for caller-accurate warnings, implemented <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-300">__hash__</code> contracts for pinned script identifiers, and corrected proxy descriptor initialization.
                   </li>
                 </ul>
               </div>
@@ -262,7 +380,7 @@ export default function OpenSourceSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span>5 PRs merged directly into upstream trunk by maintainer Corey Goldberg</span>
+                  <span>7 PRs merged directly into upstream trunk by maintainer Corey Goldberg</span>
                 </div>
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />

@@ -8,7 +8,7 @@ export const personalInfo = {
     "React & React Native Specialist",
     "High-Performance Cloud & Backend Developer"
   ],
-  bio: "Software engineer and official core contributor to React Native (Meta) and Selenium, specializing in browser automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
+  bio: "Software engineer and official core contributor to React Native (Meta), NestJS, and Selenium, specializing in browser automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
   valueProposition: "Expertise across Selenium & Java test automation frameworks, modern AI QA tooling, real-time reactive applications, and scalable microservices.",
   location: "India (Open to Global Remote & Relocation)",
   status: "Actively interviewing for Software Engineering & Full-Stack / Backend / AI roles",
@@ -29,7 +29,7 @@ export const personalInfo = {
 
 export const stats = [
   { label: "Java & Systems Depth", value: "2+ Yrs", icon: "Code2" },
-  { label: "Tier-1 Upstream PRs", value: "12+", icon: "GitPullRequest" },
+  { label: "Tier-1 Upstream PRs", value: "16+", icon: "GitPullRequest" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" }
 ];
@@ -257,6 +257,16 @@ export const projects = [
 
 export const initialGithubRepos = [
   {
+    name: "nest (nestjs/nest)",
+    description: "Enterprise TypeScript/Node.js framework (67k+ stars). Merged PR #18372 (stripping trailing slashes in view resolution).",
+    html_url: "https://github.com/nestjs/nest/pull/18372",
+    homepage: "https://nestjs.com/",
+    language: "TypeScript",
+    stargazers_count: 67000,
+    forks_count: 7500,
+    updated_at: new Date().toISOString()
+  },
+  {
     name: "react-native (facebook/react-native)",
     description: "Meta's official cross-platform framework. Merged PR #59458 (package README URLs) & PR #59459 (virtualized-lists runtime invariant fixes).",
     html_url: "https://github.com/react/react-native/pull/59459",
@@ -268,7 +278,7 @@ export const initialGithubRepos = [
   },
   {
     name: "selenium (SeleniumHQ/selenium)",
-    description: "Official Selenium browser automation framework. Core contributor: merged PR #18239 (ErrorHandler fix) and PR #18238 (RFC 6265 cookie matching).",
+    description: "Official Selenium browser automation framework. Core contributor: 7 merged PRs across Python and JS WebDriver engines (RFC 6265, BiDi bounds, error handling).",
     html_url: "https://github.com/SeleniumHQ/selenium/pull/18239",
     homepage: "https://www.selenium.dev/",
     language: "Python",
