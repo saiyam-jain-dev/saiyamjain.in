@@ -24,11 +24,11 @@ He is a polyglot software engineer with:
 5. 44+ active repositories on GitHub with verified daily continuous commits.`,
 
   opensource: `Open Source Contributions & Impact:
-• Selenium (SeleniumHQ/selenium) — Core Contributor:
+• Selenium (SeleniumHQ/selenium) - Core Contributor:
   - PR #18239 (Merged into trunk by Corey Goldberg): Hardened ErrorHandler.check_response() against fatal TypeError and KeyError exceptions when remote drivers return None or missing error payloads.
   - PR #18238 (Merged into trunk by Corey Goldberg): Aligned APIRequestContext cookie matching with RFC 6265 specs (case-insensitive domain matching, subdomain resolution, trailing slash paths).
   - PR #18240 (Active): Enforced W3C WebDriver BiDi protocol conformance by rejecting null list elements across serialization channels (104/104 tests passing).
-• REA (morluto/rea) — Core Contributor:
+• REA (morluto/rea) - Core Contributor:
   - PR #6973 (Merged): Expanded Erlang BEAM view queries and acceptance regression test suites across 31,000+ test shard runner.`,
 
   java: `Java & Automation Testing (2+ Years):
@@ -47,20 +47,20 @@ Saiyam specializes in Java automation testing frameworks (Selenium, TestNG), mod
 • Cloud & DBs: PostgreSQL, MongoDB, MySQL, Docker, Firebase, Git CI/CD`,
 
   projects: `Key Flagship Deployments:
-1. ReelAI (2026) — AI-powered YouTube clip editor & vertical format timeline trimmer.
-2. PDF Document Workstation (2026) — In-browser document visualizer with live GitHub Pages demo.
-3. Movieyama — Entertainment streaming & media discovery hub powered by TMDB API.
-4. Pathfinder Visualiser — Dynamic graph algorithms visualizer (Dijkstra's, Kruskal's, Prim's).
-5. Projectify — Full-stack agile collaboration platform with JWT auth and email alerts.`,
+1. ReelAI (2026) - AI-powered YouTube clip editor & vertical format timeline trimmer.
+2. PDF Document Workstation (2026) - In-browser document visualizer with live GitHub Pages demo.
+3. Movieyama - Entertainment streaming & media discovery hub powered by TMDB API.
+4. Pathfinder Visualiser - Dynamic graph algorithms visualizer (Dijkstra's, Kruskal's, Prim's).
+5. Projectify - Full-stack agile collaboration platform with JWT auth and email alerts.`,
 
   experience: `Industry & Professional Experience:
 • Java Automation Testing & AI Systems Engineer (July 2024 - Present)
   Architecting automated Java test frameworks (Selenium, TestNG), modern AI-driven QA testing tools, and continuous integration pipelines for high-reliability systems.
-• RemoteState — Software Engineer (Jan 2024 - June 2024)
+• RemoteState - Software Engineer (Jan 2024 - June 2024)
   Built cross-platform apps using React Native and native Java bridging. Integrated RESTful endpoints and real-time Firebase sync. Reduced client re-renders by 30%.`,
 
   hire: `Why Hire Saiyam Jain?
-✓ Versatility: Solves problems across the entire lifecycle — from Java automation testing suites and microservices to React Native mobile apps and GenAI tools.
+✓ Versatility: Solves problems across the entire lifecycle - from Java automation testing suites and microservices to React Native mobile apps and GenAI tools.
 ✓ Proven Velocity: 44+ repositories and verified active GitHub commit matrix.
 ✓ High Academic & Algorithmic Foundation: BCA 7.5 CGPA with mastery of DSA and graph algorithms.
 ✓ Immediately adaptable to any engineering team and tech stack.`

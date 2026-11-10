@@ -21,11 +21,22 @@ export default function OpenSourceSection() {
               Open Source Contributions
             </h2>
             <p className="text-sm text-zinc-400 font-mono mt-1">
-              Verified upstream code accepted and reviewed across Meta's React Native, NestJS, Selenium, Babel, CPython, OpenTelemetry, and REA.
+              Verified upstream code accepted and reviewed across Meta's React Native, NestJS, Selenium, ESLint, Babel, CPython, OpenTelemetry, and REA.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 self-start md:self-auto">
+            <a
+              href="https://github.com/eslint/eslint/pull/21509"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 border border-violet-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GitPullRequest size={13} className="text-violet-400" />
+              <span>ESLint #21509 (Reviewed)</span>
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
             <a
               href="https://github.com/react/react-native/pull/59459"
               target="_blank"
@@ -145,7 +156,7 @@ export default function OpenSourceSection() {
                   </a>
                 </div>
                 <p className="text-sm text-cyan-400/90 font-mono mt-0.5">
-                  Meta's Cross-Platform Framework — The core native runtime powering millions of apps globally
+                  Meta's Cross-Platform Framework : The core native runtime powering millions of apps globally
                 </p>
               </div>
 
@@ -350,7 +361,7 @@ export default function OpenSourceSection() {
                   </a>
                 </div>
                 <p className="text-sm text-emerald-400/90 font-mono mt-0.5">
-                  Official Selenium Browser Automation Framework — The industry-standard web automation engine
+                  Official Selenium Browser Automation Framework : The industry-standard web automation engine
                 </p>
               </div>
 
@@ -460,7 +471,7 @@ export default function OpenSourceSection() {
                   </a>
                 </div>
                 <p className="text-sm text-amber-400/90 font-mono mt-0.5">
-                  The Compiler for Next Generation JavaScript — Transforming syntax across millions of builds daily
+                  The Compiler for Next Generation JavaScript : Transforming syntax across millions of builds daily
                 </p>
               </div>
 
@@ -624,7 +635,108 @@ export default function OpenSourceSection() {
 
         </div>
 
-        {/* Contribution 5: morluto / rea */}
+        {/* Contribution 5: eslint / eslint */}
+        <div className="relative rounded-2xl bg-gradient-to-b from-zinc-900/80 to-zinc-950/90 border border-zinc-800/80 hover:border-violet-500/40 p-6 sm:p-8 transition-all duration-300 shadow-2xl group">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <div className="space-y-4 max-w-3xl">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-violet-500/15 text-violet-300 border border-violet-500/30">
+                  <GitPullRequest size={13} className="text-violet-400" />
+                  Reviewed by Core Maintainer
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                  Standard JavaScript Linter (25k+ Stars)
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                  Rules &amp; AST Engine
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-zinc-800/70 text-zinc-400 border border-zinc-700/50">
+                  Mocha Suite • 530 Tests Passing
+                </span>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-violet-300 transition-colors">
+                    eslint / eslint
+                  </h3>
+                  <a
+                    href="https://github.com/eslint/eslint"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-500 hover:text-white transition-colors"
+                    title="View Repository"
+                  >
+                    <GithubIcon size={20} />
+                  </a>
+                </div>
+                <p className="text-sm text-violet-400/90 font-mono mt-0.5">
+                  The Pluggable JavaScript &amp; TypeScript Linter : Core engine for static code analysis across modern web ecosystems
+                </p>
+              </div>
+
+              <div className="space-y-2 text-sm text-zinc-300 leading-relaxed">
+                <p>
+                  Contributed to <strong>ESLint</strong>'s core rules engine in <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-violet-300">no-extra-boolean-cast</code> rule to guarantee JavaScript grammar validity and ASI safety across all autofix operations:
+                </p>
+                <ul className="list-disc list-inside space-y-1.5 text-zinc-300 pl-1">
+                  <li>
+                    <strong className="text-white">PR #21509:</strong> Fixed AST autofixer syntax breakage where stripping redundant <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-violet-300">Boolean(...)</code> or double negations left object literals, function expressions, class expressions, and <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-violet-300">let[</code> bindings unparenthesized at the start of expression statements.
+                  </li>
+                  <li>
+                    <strong className="text-white">ASI Safety Architecture:</strong> Integrated <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-violet-300">astUtils.needsPrecedingSemicolon()</code> to prepend protective semicolons when parenthesizing statement-leading replacements, preventing unintended function call continuation bugs across unsemicoloned preceding lines.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
+                  <ShieldCheck size={14} className="text-violet-400 mt-0.5 shrink-0" />
+                  <span>Maintained 100% test pass rate across 530 rule unit tests</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
+                  <ShieldCheck size={14} className="text-violet-400 mt-0.5 shrink-0" />
+                  <span>Verified against official ESLint Contributor Guidelines &amp; Style Standard</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0 lg:w-64 pt-2 lg:pt-0">
+              <a
+                href="https://github.com/eslint/eslint/pull/21509"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-violet-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <GitPullRequest size={16} className="text-violet-400" />
+                  <span className="font-bold">Inspect PR #21509</span>
+                </div>
+                <ArrowUpRight size={14} className="text-zinc-500 group-hover/btn:text-white transition-colors" />
+              </a>
+
+              <a
+                href="https://github.com/saiyam-jain-dev/eslint/commit/91e50872441bbf9793394d854303862a4086db02"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-xl bg-zinc-950/80 hover:bg-zinc-900/90 border border-zinc-800 hover:border-violet-500/50 text-white transition-all text-xs font-mono group/btn cursor-pointer"
+              >
+                <div className="flex items-center gap-2">
+                  <Terminal size={14} className="text-violet-400" />
+                  <span className="font-semibold text-zinc-300">Commit 91e5087</span>
+                </div>
+                <span className="text-[11px] text-zinc-500 group-hover/btn:text-violet-300 font-mono">Branch</span>
+              </a>
+
+              <div className="p-3.5 rounded-xl bg-zinc-950/60 border border-zinc-900 text-xs font-mono text-zinc-400 space-y-1">
+                <div className="text-[10px] uppercase text-zinc-500 tracking-wider font-bold">Tech Stack</div>
+                <div className="text-zinc-300 font-semibold">JavaScript • ESLint AST • Espree • Mocha • Node.js</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contribution 6: morluto / rea */}
         <div className="relative rounded-2xl bg-gradient-to-b from-zinc-900/80 to-zinc-950/90 border border-zinc-800/80 hover:border-purple-500/40 p-6 sm:p-8 transition-all duration-300 shadow-2xl group">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
             <div className="space-y-4 max-w-3xl">
@@ -660,7 +772,7 @@ export default function OpenSourceSection() {
                   </a>
                 </div>
                 <p className="text-sm text-purple-400/90 font-mono mt-0.5">
-                  Reverse Engineer Anything — Local-first agentic reverse-engineering tool with shared CLI/MCP workflows
+                  Reverse Engineer Anything : Local-first agentic reverse-engineering tool with shared CLI/MCP workflows
                 </p>
               </div>
 

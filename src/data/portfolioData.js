@@ -29,62 +29,76 @@ export const personalInfo = {
 
 export const stats = [
   { label: "Java & Systems Depth", value: "2+ Yrs", icon: "Code2" },
-  { label: "Tier-1 Upstream PRs", value: "16+", icon: "GitPullRequest" },
+  { label: "Tier-1 Upstream PRs", value: "18+", icon: "GitPullRequest" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" }
 ];
 
 export const skillCategories = [
   {
-    id: "languages-backend",
-    title: "Java, Backend & Automation Testing",
-    description: "Robust enterprise architectures, automated testing suites, and distributed systems",
+    id: "backend",
+    title: "Backend, Systems & Databases",
+    description: "Enterprise Java architectures, Python automation, distributed data stores, and scalable REST APIs",
     skills: [
+      { name: "Python", level: "Expert • 3+ Years", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "Java (Core & EE)", level: "2+ Years • Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-      { name: "Java Automation Testing", level: "2+ Years • Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-      { name: "Selenium & TestNG", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" },
-      { name: "AI-Augmented QA & Testing", level: "Production-Ready", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "Spring Boot / REST APIs", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
       { name: "Node.js & Express", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
-      { name: "TypeScript & Python", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" }
-    ]
-  },
-  {
-    id: "genai",
-    title: "GenAI, LLMs & AI Engineering",
-    description: "AI-augmented workflows, local-first models, audio/video AI pipelines, and agentic integrations",
-    skills: [
-      { name: "GenAI & LLM Integration", level: "Production-Ready", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
-      { name: "Local-First AI Tooling", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
-      { name: "AI Automated Testing", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
-      { name: "OpenAI & Claude APIs", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
-      { name: "Computer Vision / OpenCV", level: "Intermediate", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" }
-    ]
-  },
-  {
-    id: "frontend-mobile",
-    title: "Full-Stack Web & Mobile",
-    description: "Reactive cross-platform applications and 60fps high-fidelity web experiences",
-    skills: [
-      { name: "React.js 19", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
-      { name: "React Native", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
-      { name: "Next.js", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" },
-      { name: "Tailwind CSS", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" },
-      { name: "Three.js & 3D WebGL", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg" },
-      { name: "Redux Toolkit & State", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" }
-    ]
-  },
-  {
-    id: "databases-devops",
-    title: "Databases, Cloud & DevOps",
-    description: "ACID transactions, NoSQL scale, Docker containerization, and automated CI/CD",
-    skills: [
+      { name: "TypeScript", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
       { name: "PostgreSQL", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
       { name: "MongoDB", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" },
       { name: "MySQL", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
+      { name: "Firebase & Supabase", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" }
+    ]
+  },
+  {
+    id: "frontend",
+    title: "Frontend Engineering",
+    description: "Reactive web architectures, modern component systems, and 60fps high-fidelity web experiences",
+    skills: [
+      { name: "React.js 19", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
+      { name: "Next.js", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" },
+      { name: "Tailwind CSS", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "Three.js & 3D WebGL", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg" },
+      { name: "Redux Toolkit & State", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" },
+      { name: "JavaScript (ES6+)", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+      { name: "HTML5 & CSS3", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" }
+    ]
+  },
+  {
+    id: "ai",
+    title: "GenAI, LLMs & AI Engineering",
+    description: "AI-augmented workflows, local-first models, audio/video AI pipelines, and agentic integrations",
+    skills: [
+      { name: "Python AI & Pipelines", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+      { name: "GenAI & LLM Integration", level: "Production-Ready", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
+      { name: "OpenAI & Claude APIs", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
+      { name: "Local-First AI Tooling", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+      { name: "Computer Vision / OpenCV", level: "Intermediate", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" },
+      { name: "AI Automated Testing", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" }
+    ]
+  },
+  {
+    id: "mobile",
+    title: "Mobile & Automation Testing",
+    description: "Cross-platform mobile applications and enterprise end-to-end browser test automation",
+    skills: [
+      { name: "React Native", level: "Advanced • Core Contributor", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
+      { name: "Java Automation Testing", level: "2+ Years • Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
+      { name: "Selenium & TestNG", level: "Expert • Core Contributor", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" },
+      { name: "Mobile App QA", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" }
+    ]
+  },
+  {
+    id: "devops",
+    title: "Databases, Cloud & DevOps",
+    description: "Containerization, automated CI/CD pipelines, and high-availability cloud deployment",
+    skills: [
       { name: "Docker", level: "Intermediate", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" },
-      { name: "Firebase & Supabase", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" },
-      { name: "Git & GitHub CI/CD", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" }
+      { name: "Git & GitHub CI/CD", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
+      { name: "Cloudflare & DNS", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cloudflare/cloudflare-original.svg" },
+      { name: "Vercel & Netlify", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg" },
+      { name: "Linux / Bash Scripting", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" }
     ]
   }
 ];
@@ -256,6 +270,26 @@ export const projects = [
 ];
 
 export const initialGithubRepos = [
+  {
+    name: "eslint (eslint/eslint)",
+    description: "Pluggable JavaScript/TypeScript linter (25k+ stars). PR #21509: preserved AST syntax validity & ASI safety in no-extra-boolean-cast autofixer.",
+    html_url: "https://github.com/eslint/eslint/pull/21509",
+    homepage: "https://eslint.org/",
+    language: "JavaScript",
+    stargazers_count: 25000,
+    forks_count: 4500,
+    updated_at: new Date().toISOString()
+  },
+  {
+    name: "whatsapp-bot",
+    description: "AI-powered WhatsApp multi-device bot with Groq LLM reasoning, voice notes (TTS), sticker generator, and Vite dashboard.",
+    html_url: "https://github.com/saiyam-jain-dev/whatsapp-bot",
+    homepage: "https://github.com/saiyam-jain-dev/whatsapp-bot",
+    language: "JavaScript",
+    stargazers_count: 2,
+    forks_count: 0,
+    updated_at: new Date().toISOString()
+  },
   {
     name: "nest (nestjs/nest)",
     description: "Enterprise TypeScript/Node.js framework (67k+ stars). Merged PR #18372 (stripping trailing slashes in view resolution).",

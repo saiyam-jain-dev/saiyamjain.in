@@ -34,7 +34,7 @@ export default function AdSenseBanner({
     <div className={`my-4 flex flex-col items-center justify-center overflow-hidden rounded-xl border border-white/5 bg-zinc-950/60 p-2 backdrop-blur-md transition-all ${className}`}>
       {label && (
         <span className="mb-1.5 text-[9px] font-mono tracking-widest text-zinc-500 uppercase select-none">
-          — {label} —
+          - {label} -
         </span>
       )}
       <div className="w-full flex justify-center min-h-[90px] relative">

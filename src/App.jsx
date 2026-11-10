@@ -10,7 +10,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThreeBackground from './components/ThreeBackground';
 import AICopilot from './components/AICopilot';
-import SexyInteractivePointer from './components/SexyInteractivePointer';
 import MusicPlayer from './components/MusicPlayer';
 import ScrollToTop from './components/ScrollToTop';
 import KonamiEasterEgg from './components/KonamiEasterEgg';
@@ -54,7 +53,6 @@ export default function App() {
   if (isGameRoute) {
     return (
       <div className="relative min-h-screen bg-black text-zinc-100 selection:bg-cyan-500 selection:text-black overflow-x-hidden">
-        <SexyInteractivePointer />
         <CyberGame onBack={() => navigate('/')} />
       </div>
     );
@@ -65,9 +63,6 @@ export default function App() {
       
       {/* 3D Animated Cyber Core & Particle Background (Global) */}
       <ThreeBackground />
-
-      {/* Sexy Interactive Cursor Sparks & Click Ripples */}
-      <SexyInteractivePointer />
 
       {/* Modern 2026 Stealth Navbar */}
       <Navbar 

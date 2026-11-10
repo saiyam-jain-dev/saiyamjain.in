@@ -1,4 +1,4 @@
-# Saiyam Jain — High-Performance Engineering Portfolio
+# Saiyam Jain - High-Performance Engineering Portfolio
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status)](https://app.netlify.com/)
 [![React 19](https://img.shields.io/badge/React-19.x-61dafb?logo=react)](https://react.dev/)
@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-Production portfolio of **Saiyam Jain** — Polyglot Software Engineer specializing in Java automation testing architectures, modern AI QA frameworks, and high-performance full-stack web and mobile systems.
+Production portfolio of **Saiyam Jain** - Polyglot Software Engineer specializing in Java automation testing architectures, modern AI QA frameworks, and high-performance full-stack web and mobile systems.
 
 Live Domain: [https://saiyamjain.in](https://saiyamjain.in)
 

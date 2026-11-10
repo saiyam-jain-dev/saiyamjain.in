@@ -140,10 +140,4 @@
   background: #06b6d4;
 }
 
-/* Custom Sexy Cyber Cursor Styling on fine pointer devices */
-@media (pointer: fine) {
-  body, a, button, input, textarea, select, [role="button"], .cursor-pointer {
-    cursor: none !important;
-  }
-}
 

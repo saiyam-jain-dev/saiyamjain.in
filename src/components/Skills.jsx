@@ -18,9 +18,10 @@ export default function Skills() {
 
   const categories = [
     { id: 'all', label: 'All Stack' },
-    { id: 'frontend', label: 'Frontend' },
     { id: 'backend', label: 'Backend & DB' },
-    { id: 'mobile', label: 'Mobile' },
+    { id: 'frontend', label: 'Frontend' },
+    { id: 'ai', label: 'AI & GenAI' },
+    { id: 'mobile', label: 'Mobile & QA' },
     { id: 'devops', label: 'DevOps & Tools' },
   ];
 
@@ -38,7 +39,7 @@ export default function Skills() {
               Skills & Stack
             </h2>
             <p className="text-sm text-zinc-400 font-mono mt-1">
-              Java, Spring, GenAI, React Native, Node.js, and Cloud Infrastructure.
+              Python, Java, Spring Boot, React, React Native, Node.js, GenAI, and Cloud Infrastructure.
             </p>
           </div>
 
