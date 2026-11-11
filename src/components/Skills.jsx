@@ -29,57 +29,56 @@ export default function Skills() {
     <section id="skills" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 pb-6 border-b border-zinc-900">
-          <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
-              <span>[04] Engineering Capabilities</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-              Skills & Stack
-            </h2>
-            <p className="text-sm text-zinc-400 font-mono mt-1">
-              Python, Java, Spring Boot, React, React Native, Node.js, GenAI, and Cloud Infrastructure.
-            </p>
+        {/* Section Header */}
+        <div className="mb-8 pb-6 border-b border-zinc-900">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
+            <span>[04] Engineering Capabilities</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+            Skills & Stack
+          </h2>
+          <p className="text-sm text-zinc-400 font-mono mt-1 max-w-3xl">
+            Python, Java, Spring Boot, React, React Native, Node.js, GenAI, and Cloud Infrastructure.
+          </p>
+        </div>
+
+        {/* Filter Toolbar */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
+          <div className="flex items-center p-1 rounded-xl bg-zinc-950 border border-zinc-800 overflow-x-auto scrollbar-none w-full lg:w-auto">
+            {categories.map((cat) => {
+              const count = cat.id === 'all' 
+                ? allSkills.length 
+                : allSkills.filter(s => s.category === cat.id).length;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs font-mono font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                    activeCategory === cat.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md'
+                      : 'text-zinc-500 hover:text-zinc-300'
+                  }`}
+                >
+                  <span>{cat.label}</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                    activeCategory === cat.id ? 'bg-black/30 text-cyan-200' : 'bg-zinc-900 text-zinc-500'
+                  }`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <div className="flex items-center p-1 rounded-xl bg-zinc-950 border border-zinc-800 overflow-x-auto scrollbar-none w-full sm:w-auto">
-              {categories.map((cat) => {
-                const count = cat.id === 'all' 
-                  ? allSkills.length 
-                  : allSkills.filter(s => s.category === cat.id).length;
-                return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
-                    className={`flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs font-mono font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
-                      activeCategory === cat.id
-                        ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md'
-                        : 'text-zinc-500 hover:text-zinc-300'
-                    }`}
-                  >
-                    <span>{cat.label}</span>
-                    <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                      activeCategory === cat.id ? 'bg-black/30 text-cyan-200' : 'bg-zinc-900 text-zinc-500'
-                    }`}>
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="relative w-full sm:w-56">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600" size={14} />
-              <input
-                type="text"
-                placeholder="Search stack..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 outline-none focus:border-cyan-500 font-mono transition-colors"
-              />
-            </div>
+          <div className="relative w-full lg:w-64">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600" size={14} />
+            <input
+              type="text"
+              placeholder="Search stack..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 outline-none focus:border-cyan-500 font-mono transition-colors"
+            />
           </div>
         </div>
 
