@@ -25,9 +25,9 @@ export default function Hero3DStage() {
     camera.position.set(0, 0, 5.2);
 
     const isMobile = window.innerWidth < 768;
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile, powerPreference: 'high-performance' });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance' });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     container.appendChild(renderer.domElement);
 
     // Main rotating container
@@ -282,11 +282,16 @@ export default function Hero3DStage() {
     // ==========================================
     // 7. Animation Loop
     // ==========================================
+    let isTabVisible = true;
+    const onVisibility = () => { isTabVisible = !document.hidden; };
+    document.addEventListener('visibilitychange', onVisibility);
+
     let animationFrameId;
     let clock = new THREE.Clock();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+      if (!isTabVisible) return;
       const time = clock.getElapsedTime();
 
       // Visibility update by mode
@@ -349,6 +354,7 @@ export default function Hero3DStage() {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      document.removeEventListener('visibilitychange', onVisibility);
       container.removeEventListener('pointerdown', onPointerDown);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);

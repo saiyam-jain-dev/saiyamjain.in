@@ -21,9 +21,9 @@ export default function ThreeBackground() {
 
     const isMobile = window.innerWidth < 768;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile, powerPreference: 'high-performance' });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance' });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     container.appendChild(renderer.domElement);
 
     // ========================================================
@@ -223,17 +223,23 @@ export default function ThreeBackground() {
     let targetX = 0;
     let targetY = 0;
     let scrollY = 0;
+    let isTabVisible = true;
 
     const handleMouseMove = (event) => {
       mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
       mouseY = (event.clientY / window.innerHeight - 0.5) * 2;
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     const handleScroll = () => {
       scrollY = window.scrollY || window.pageYOffset;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    const handleVisibility = () => {
+      isTabVisible = !document.hidden;
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -250,6 +256,8 @@ export default function ThreeBackground() {
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+      if (!isTabVisible) return;
+
       const time = clock.getElapsedTime();
 
       // Animate Inner Core & Lattice
@@ -282,17 +290,9 @@ export default function ThreeBackground() {
         }
       });
 
-      // Animate Terrain Waves
-      const positionArray = terrainGeometry.attributes.position.array;
-      for (let i = 0; i < positionArray.length; i += 3) {
-        const u = originalPositions[i];
-        const v = originalPositions[i + 2];
-        const wave = 
-          Math.sin(u * 0.22 + time * 1.1) * Math.cos(v * 0.22 + time * 1.1) * 1.1 +
-          Math.sin((u + v) * 0.14 + time * 0.7) * 0.7;
-        positionArray[i + 1] = originalPositions[i + 1] + wave;
-      }
-      terrainGeometry.attributes.position.needsUpdate = true;
+      // Smooth Matrix Terrain Wave (GPU transform instead of CPU vertex mutation)
+      terrainMesh.position.y = -6.5 + Math.sin(time * 0.9) * 0.35;
+      terrainMesh.rotation.z = Math.sin(time * 0.45) * 0.04;
 
       // Slowly rotate particle field
       particleSystem.rotation.y = time * 0.03;
@@ -321,6 +321,7 @@ export default function ThreeBackground() {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      document.removeEventListener('visibilitychange', handleVisibility);
       if (container && renderer.domElement) {
         container.removeChild(renderer.domElement);
       }
