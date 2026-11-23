@@ -27,7 +27,7 @@ export default function Hero3DStage() {
     const isMobile = window.innerWidth < 768;
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance' });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.0));
     container.appendChild(renderer.domElement);
 
     // Main rotating container
@@ -57,11 +57,9 @@ export default function Hero3DStage() {
 
     // Inner Cube Wireframe
     const innerBoxGeo = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-    const innerBoxMat = new THREE.MeshStandardMaterial({
+    const innerBoxMat = new THREE.MeshBasicMaterial({
       color: 0x38bdf8,
       wireframe: true,
-      emissive: 0x0284c7,
-      emissiveIntensity: 0.6,
       transparent: true,
       opacity: 0.9
     });
@@ -70,13 +68,11 @@ export default function Hero3DStage() {
 
     // Outer Hypercube Lattice (Rotates oppositely)
     const outerBoxGeo = new THREE.BoxGeometry(2.4, 2.4, 2.4);
-    const outerBoxMat = new THREE.MeshStandardMaterial({
+    const outerBoxMat = new THREE.MeshBasicMaterial({
       color: 0xa855f7,
       wireframe: true,
-      emissive: 0x7e22ce,
-      emissiveIntensity: 0.45,
       transparent: true,
-      opacity: 0.65
+      opacity: 0.7
     });
     const outerBox = new THREE.Mesh(outerBoxGeo, outerBoxMat);
     tesseractGroup.add(outerBox);
@@ -122,13 +118,11 @@ export default function Hero3DStage() {
     const planeGeo = new THREE.PlaneGeometry(12, 12, 28, 28);
     planeGeo.rotateX(-Math.PI / 2.5);
     const originalPlanePos = new Float32Array(planeGeo.attributes.position.array);
-    const planeMat = new THREE.MeshStandardMaterial({
+    const planeMat = new THREE.MeshBasicMaterial({
       color: 0x6366f1,
       wireframe: true,
-      roughness: 0.2,
-      metalness: 0.8,
-      emissive: 0x312e81,
-      emissiveIntensity: 0.6,
+      transparent: true,
+      opacity: 0.7,
     });
     const matrixMesh = new THREE.Mesh(planeGeo, planeMat);
     matrixMesh.position.y = -0.5;
@@ -136,11 +130,11 @@ export default function Hero3DStage() {
 
     // Central floating cube in matrix
     const matrixBoxGeo = new THREE.BoxGeometry(1.4, 1.4, 1.4);
-    const matrixBoxMat = new THREE.MeshStandardMaterial({
+    const matrixBoxMat = new THREE.MeshBasicMaterial({
       color: 0x06b6d4,
       wireframe: true,
-      emissive: 0x0891b2,
-      emissiveIntensity: 0.7,
+      transparent: true,
+      opacity: 0.85,
     });
     const matrixBox = new THREE.Mesh(matrixBoxGeo, matrixBoxMat);
     matrixGroup.add(matrixBox);
@@ -224,16 +218,11 @@ export default function Hero3DStage() {
     scene.add(light2);
 
     // ==========================================
-    // 6. Interactive Mouse & Drag Controls
+    // 6. Interactive Drag Controls (Zero global listener overhead when idle)
     // ==========================================
     let isDragging = false;
     let prevMousePos = { x: 0, y: 0 };
     let rotationVelocity = { x: 0, y: 0 };
-
-    const onPointerDown = (e) => {
-      isDragging = true;
-      prevMousePos = { x: e.clientX, y: e.clientY };
-    };
 
     const onPointerMove = (e) => {
       if (!isDragging) return;
@@ -252,7 +241,20 @@ export default function Hero3DStage() {
     };
 
     const onPointerUp = () => {
-      isDragging = false;
+      if (isDragging) {
+        isDragging = false;
+        window.removeEventListener('pointermove', onPointerMove);
+        window.removeEventListener('pointerup', onPointerUp);
+        window.removeEventListener('pointercancel', onPointerUp);
+      }
+    };
+
+    const onPointerDown = (e) => {
+      isDragging = true;
+      prevMousePos = { x: e.clientX, y: e.clientY };
+      window.addEventListener('pointermove', onPointerMove, { passive: true });
+      window.addEventListener('pointerup', onPointerUp, { passive: true });
+      window.addEventListener('pointercancel', onPointerUp, { passive: true });
     };
 
     // Shockwave pulse trigger on click
@@ -266,9 +268,7 @@ export default function Hero3DStage() {
       }, 250);
     };
 
-    container.addEventListener('pointerdown', onPointerDown);
-    window.addEventListener('pointermove', onPointerMove);
-    window.addEventListener('pointerup', onPointerUp);
+    container.addEventListener('pointerdown', onPointerDown, { passive: true });
 
     // Resize handler
     const onResize = () => {
@@ -280,18 +280,28 @@ export default function Hero3DStage() {
     window.addEventListener('resize', onResize);
 
     // ==========================================
-    // 7. Animation Loop
+    // 7. Animation Loop & Viewport Observer
     // ==========================================
     let isTabVisible = true;
+    let isIntersecting = true;
+
     const onVisibility = () => { isTabVisible = !document.hidden; };
     document.addEventListener('visibilitychange', onVisibility);
+
+    let observer;
+    if (typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(([entry]) => {
+        isIntersecting = entry.isIntersecting;
+      }, { threshold: 0.05 });
+      observer.observe(container);
+    }
 
     let animationFrameId;
     let clock = new THREE.Clock();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
-      if (!isTabVisible) return;
+      if (!isTabVisible || !isIntersecting) return;
       const time = clock.getElapsedTime();
 
       // Visibility update by mode
@@ -355,9 +365,11 @@ export default function Hero3DStage() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       document.removeEventListener('visibilitychange', onVisibility);
+      if (observer) observer.disconnect();
       container.removeEventListener('pointerdown', onPointerDown);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
       window.removeEventListener('resize', onResize);
       if (container && renderer.domElement) {
         container.removeChild(renderer.domElement);

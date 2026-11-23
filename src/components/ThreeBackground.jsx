@@ -21,9 +21,15 @@ export default function ThreeBackground() {
 
     const isMobile = window.innerWidth < 768;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance' });
+    const renderer = new THREE.WebGLRenderer({ 
+      alpha: true, 
+      antialias: false, 
+      powerPreference: 'high-performance',
+      stencil: false,
+      depth: true
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.0));
     container.appendChild(renderer.domElement);
 
     // ========================================================
@@ -34,11 +40,11 @@ export default function ThreeBackground() {
     scene.add(coreRoot);
 
     // A. Center Glowing Light Nucleus
-    const nucleusGeo = new THREE.SphereGeometry(1.6, 32, 32);
+    const nucleusGeo = new THREE.SphereGeometry(1.6, 20, 20);
     const nucleusMat = new THREE.MeshBasicMaterial({
       color: 0x06b6d4,
       transparent: true,
-      opacity: 0.2,
+      opacity: 0.22,
       blending: THREE.AdditiveBlending,
     });
     const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
@@ -46,30 +52,24 @@ export default function ThreeBackground() {
 
     // B. Inner Glowing Geodesic Wireframe (Icosahedron)
     const innerGeo = new THREE.IcosahedronGeometry(4.0, 2);
-    const innerMat = new THREE.MeshStandardMaterial({
+    const innerMat = new THREE.MeshBasicMaterial({
       color: 0x06b6d4,
       wireframe: true,
-      roughness: 0.2,
-      metalness: 0.8,
-      emissive: 0x0891b2,
-      emissiveIntensity: 0.35,
       transparent: true,
       opacity: 0.45,
+      blending: THREE.AdditiveBlending,
     });
     const innerCore = new THREE.Mesh(innerGeo, innerMat);
     coreRoot.add(innerCore);
 
     // C. Outer Geometric Lattice Cage (Dodecahedron)
     const outerGeo = new THREE.DodecahedronGeometry(5.6, 1);
-    const outerMat = new THREE.MeshStandardMaterial({
+    const outerMat = new THREE.MeshBasicMaterial({
       color: 0x7c3aed,
       wireframe: true,
-      roughness: 0.3,
-      metalness: 0.7,
-      emissive: 0x4c1d95,
-      emissiveIntensity: 0.25,
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.35,
+      blending: THREE.AdditiveBlending,
     });
     const outerCore = new THREE.Mesh(outerGeo, outerMat);
     coreRoot.add(outerCore);
@@ -79,7 +79,7 @@ export default function ThreeBackground() {
     coreRoot.add(ringGroup);
 
     // Ring 1 (Cyan)
-    const ringGeo1 = new THREE.TorusGeometry(7.4, 0.04, 16, 120);
+    const ringGeo1 = new THREE.TorusGeometry(7.4, 0.04, 12, 72);
     const ringMat1 = new THREE.MeshBasicMaterial({
       color: 0x06b6d4,
       transparent: true,
@@ -90,7 +90,7 @@ export default function ThreeBackground() {
     ringGroup.add(ring1);
 
     // Ring 2 (Magenta / Hot Pink)
-    const ringGeo2 = new THREE.TorusGeometry(8.8, 0.035, 16, 120);
+    const ringGeo2 = new THREE.TorusGeometry(8.8, 0.035, 12, 72);
     const ringMat2 = new THREE.MeshBasicMaterial({
       color: 0xd946ef,
       transparent: true,
@@ -102,7 +102,7 @@ export default function ThreeBackground() {
     ringGroup.add(ring2);
 
     // Ring 3 (Emerald Green)
-    const ringGeo3 = new THREE.TorusGeometry(10.2, 0.03, 16, 120);
+    const ringGeo3 = new THREE.TorusGeometry(10.2, 0.03, 12, 72);
     const ringMat3 = new THREE.MeshBasicMaterial({
       color: 0x10b981,
       transparent: true,
@@ -116,7 +116,7 @@ export default function ThreeBackground() {
     // E. Orbiting Satellite Beacons on Rings
     const satGroup = new THREE.Group();
     coreRoot.add(satGroup);
-    const satGeo = new THREE.SphereGeometry(0.18, 16, 16);
+    const satGeo = new THREE.SphereGeometry(0.18, 12, 12);
     const satMat = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       blending: THREE.AdditiveBlending,
@@ -140,22 +140,16 @@ export default function ThreeBackground() {
     // ========================================================
     const gridWidth = 70;
     const gridDepth = 70;
-    const gridSegments = isMobile ? 22 : 44;
+    const gridSegments = isMobile ? 14 : 22;
     const terrainGeometry = new THREE.PlaneGeometry(gridWidth, gridDepth, gridSegments, gridSegments);
     terrainGeometry.rotateX(-Math.PI / 2);
 
-    const posAttribute = terrainGeometry.attributes.position;
-    const originalPositions = new Float32Array(posAttribute.array);
-
-    const terrainMaterial = new THREE.MeshStandardMaterial({
+    const terrainMaterial = new THREE.MeshBasicMaterial({
       color: 0x4f46e5,
       wireframe: true,
-      roughness: 0.1,
-      metalness: 0.9,
-      emissive: 0x312e81,
-      emissiveIntensity: 0.45,
       transparent: true,
       opacity: 0.35,
+      blending: THREE.AdditiveBlending,
     });
     const terrainMesh = new THREE.Mesh(terrainGeometry, terrainMaterial);
     terrainMesh.position.y = -6.5;
@@ -164,7 +158,7 @@ export default function ThreeBackground() {
     // ========================================================
     // 4. FLOATING STAR / NEURAL PARTICLE CLOUD
     // ========================================================
-    const particleCount = isMobile ? 320 : 750;
+    const particleCount = isMobile ? 220 : 420;
     const particleGeometry = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particleCount * 3);
     const particleColors = new Float32Array(particleCount * 3);
@@ -200,20 +194,8 @@ export default function ThreeBackground() {
     // ========================================================
     // 5. LIGHTING (Soft Stealth Ambiance)
     // ========================================================
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
-
-    const centerLight = new THREE.PointLight(0x06b6d4, 3.5, 30);
-    centerLight.position.set(0, 0, 0);
-    scene.add(centerLight);
-
-    const lightCyan = new THREE.PointLight(0x06b6d4, 2.5, 35);
-    lightCyan.position.set(-10, 8, 8);
-    scene.add(lightCyan);
-
-    const lightPurple = new THREE.PointLight(0xa855f7, 2.5, 35);
-    lightPurple.position.set(10, -6, 8);
-    scene.add(lightPurple);
 
     // ========================================================
     // 6. INTERACTION & PARALLAX
@@ -297,19 +279,19 @@ export default function ThreeBackground() {
       // Slowly rotate particle field
       particleSystem.rotation.y = time * 0.03;
 
-      // Smooth Mouse & Scroll Parallax
-      targetX += (mouseX - targetX) * 0.04;
-      targetY += (mouseY - targetY) * 0.04;
+      // Responsive, smooth mouse & scroll parallax (snappy 0.12 lerp eliminates input latency feel)
+      targetX += (mouseX - targetX) * 0.12;
+      targetY += (mouseY - targetY) * 0.12;
 
-      const scrollOffset = scrollY * 0.0025;
+      const scrollOffset = scrollY * 0.0018;
 
-      camera.position.x = targetX * 3.0;
-      camera.position.y = -targetY * 1.5;
+      camera.position.x = targetX * 1.5;
+      camera.position.y = -targetY * 1.0;
       camera.lookAt(0, 0, 0);
 
       // Core responds smoothly to mouse and scroll
-      coreRoot.rotation.y = targetX * 0.35 + scrollOffset;
-      coreRoot.rotation.x = -targetY * 0.25;
+      coreRoot.rotation.y = targetX * 0.22 + scrollOffset;
+      coreRoot.rotation.x = -targetY * 0.15;
 
       renderer.render(scene, camera);
     };
@@ -343,6 +325,7 @@ export default function ThreeBackground() {
       terrainMaterial.dispose();
       particleGeometry.dispose();
       particleMaterial.dispose();
+      ambientLight.dispose();
       renderer.dispose();
     };
   }, []);
@@ -351,10 +334,10 @@ export default function ThreeBackground() {
     <>
       <div 
         ref={containerRef} 
-        className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-35"
+        className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-35 [contain:strict] [transform:translateZ(0)]"
       />
       {/* Soft Vignette Scrim for Maximum Text Legibility */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-black/25 via-transparent to-black/60" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-black/25 via-transparent to-black/60 [contain:strict] [transform:translateZ(0)]" />
     </>
   );
 }
