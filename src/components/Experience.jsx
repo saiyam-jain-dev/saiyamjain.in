@@ -19,7 +19,7 @@ export default function Experience() {
               Experience & Education
             </h2>
             <p className="text-sm text-zinc-400 font-mono mt-1">
-              Java automation testing, AI QA systems, RemoteState software engineering, and TMU BCA foundation.
+              Java backend engineering, Applied GenAI systems at Newgen Technomate, RemoteState, and TMU BCA foundation.
             </p>
           </div>
 

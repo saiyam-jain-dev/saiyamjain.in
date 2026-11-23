@@ -17,34 +17,35 @@ import { personalInfo, projects, experiences, skillCategories } from '../data/po
 const aiKnowledgeBase = {
   versatility: `Can Saiyam build anything? YES.
 He is a polyglot software engineer with:
-1. 2+ Years of Java automation testing, modern AI testing tools, and enterprise architectures.
-2. End-to-end Full Stack web & mobile engineering (React 19, React Native, Next.js, Node.js).
-3. Practical Generative AI & LLM tooling (building local-first AI video editors, OpenAI/Claude integrations, computer vision with OpenCV).
-4. Scalable data layers (MongoDB, PostgreSQL, MySQL, Redis, Firebase).
-5. 44+ active repositories on GitHub with verified daily continuous commits.`,
+1. 2+ Years of Java backend engineering (Spring Boot 3, PostgreSQL, Kafka event pipelines).
+2. Applied GenAI & LLM serving infrastructure (Spring AI, pgvector HNSW retrieval, tool-calling, token/cost tracing).
+3. End-to-end Full Stack web & mobile engineering (React 19, React Native, Next.js, Node.js).
+4. Scalable data layers (PostgreSQL RLS, Redis, MongoDB, MySQL).
+5. 22+ merged pull requests across Tier-1 open-source repositories (Selenium, Meta React Native, Scale AI, NestJS, Babel).`,
 
   opensource: `Open Source Contributions & Impact:
-• Selenium (SeleniumHQ/selenium) - Core Contributor:
-  - PR #18239 (Merged into trunk by Corey Goldberg): Hardened ErrorHandler.check_response() against fatal TypeError and KeyError exceptions when remote drivers return None or missing error payloads.
-  - PR #18238 (Merged into trunk by Corey Goldberg): Aligned APIRequestContext cookie matching with RFC 6265 specs (case-insensitive domain matching, subdomain resolution, trailing slash paths).
-  - PR #18240 (Active): Enforced W3C WebDriver BiDi protocol conformance by rejecting null list elements across serialization channels (104/104 tests passing).
-• REA (morluto/rea) - Core Contributor:
-  - PR #6973 (Merged): Expanded Erlang BEAM view queries and acceptance regression test suites across 31,000+ test shard runner.`,
+• 22+ Merged Pull Requests across 10 major open source ecosystems:
+• Selenium (8 PRs in trunk): Hardened ErrorHandler, RFC 6265 cookie matching, WebDriver BiDi serialization and bounds.
+• Meta / React Native: Fixed user-facing runtime invariant assertion messages in virtualized-lists (merged into production trunk D127799190).
+• Scale AI (3 PRs): Protocol client sanitization, download completion timestamp preservation, Unix import guards.
+• NestJS: Resolved trailing-slash view engine resolution in core (#18372).
+• Babel: Preserved AST type modifiers in TSImportEqualsDeclaration (#18437).`,
 
-  java: `Java & Automation Testing (2+ Years):
-Saiyam specializes in Java automation testing frameworks (Selenium, TestNG), modern AI-augmented QA tools, object-oriented software design, concurrency patterns, and RESTful microservices. His BCA background (7.5 CGPA) provided rigorous foundation in data structures, algorithms, and high-reliability systems testing.`,
+  java: `Java Backend & Systems Engineering (2+ Years):
+Saiyam specializes in Java 21 / 17 (Virtual Threads), Spring Boot 3, PostgreSQL, and distributed messaging with Apache Kafka. At Newgen Technomate, he built secure multi-tenant REST services with OAuth2/JWT and Row-Level Security (RLS), tuned database paths to sub-150ms p95/p99 latencies on 20M-row tables, and engineered idempotent Kafka consumers (~250k events/day) with Avro schemas and Resilience4j circuit breakers.`,
 
-  genai: `GenAI & AI Tools Experience:
-• ReelAI (2026): A local-first AI-driven YouTube clip generator and editor that ingests video streams, calculates highlight trim points, and formats short-form vertical reels with copyright checks.
-• Modern AI Testing: Integrating LLMs and automated prompt pipelines for automated test case generation and edge-case discovery.
-• CamShow (2026): Computer vision & OpenCV stream processing in Python.
-• AI Agent integrations: Context-aware LLM agents, prompt engineering, and client-side inference pipelines.`,
+  genai: `GenAI & Serving Infrastructure Experience:
+• Production RAG: Document search and Q&A using Spring AI and pgvector with HNSW indexing and sentence-aware chunking.
+• Deterministic Structured Output: JSON Schema-constrained output parsing and dynamic tool-calling layers for metadata lookups.
+• Real-time Streaming: Server-Sent Events (SSE) streaming to Next.js clients, eliminating polling loops that drove 40% of read traffic.
+• Cost Observability: OpenTelemetry spans instrumented for token count and latency tracking to curb LLM spend.`,
 
   skills: `Comprehensive Engineering Arsenal:
-• Java & Testing: Java (Core & EE, 2+ Yrs), Automation Testing, Selenium, TestNG, AI Testing Tools, Spring Boot, REST APIs
-• GenAI: LLM Pipelines, Local-First AI Video Tools, OpenCV, Prompt Architecture
-• Frontend & Mobile: React 19, React Native, Next.js, TypeScript, Tailwind CSS, Redux Toolkit, Three.js
-• Cloud & DBs: PostgreSQL, MongoDB, MySQL, Docker, Firebase, Git CI/CD`,
+• Backend: Java 21/17 (Virtual Threads), Spring Boot 3, Spring Security (OAuth2/JWT), Hibernate 6, REST, gRPC, Apache Kafka, Resilience4j
+• Generative AI: Spring AI, RAG, pgvector (HNSW), Tool Calling, JSON Schema Structured Output, OpenTelemetry Tracing
+• Data: PostgreSQL (RLS, Partitioning, EXPLAIN), Redis, MongoDB, Flyway, jOOQ
+• Cloud & DevOps: Docker, Kubernetes (EKS), Helm, GitHub Actions, Testcontainers, Prometheus, Grafana
+• Frontend: React 18/19, Next.js 14, Tailwind CSS, Server-Sent Events (SSE)`,
 
   projects: `Key Flagship Deployments:
 1. ReelAI (2026) - AI-powered YouTube clip editor & vertical format timeline trimmer.
@@ -54,16 +55,16 @@ Saiyam specializes in Java automation testing frameworks (Selenium, TestNG), mod
 5. Projectify - Full-stack agile collaboration platform with JWT auth and email alerts.`,
 
   experience: `Industry & Professional Experience:
-• Java Automation Testing & AI Systems Engineer (July 2024 - Present)
-  Architecting automated Java test frameworks (Selenium, TestNG), modern AI-driven QA testing tools, and continuous integration pipelines for high-reliability systems.
+• Newgen Technomate - Software Engineer, Backend (July 2024 - Present)
+  Architecting multi-tenant REST services (Spring Boot 3, PostgreSQL), GenAI document search & Q&A (Spring AI, pgvector), OpenTelemetry token tracing, and idempotent Kafka event ingestion (~250k events/day).
 • RemoteState - Software Engineer (Jan 2024 - June 2024)
   Built cross-platform apps using React Native and native Java bridging. Integrated RESTful endpoints and real-time Firebase sync. Reduced client re-renders by 30%.`,
 
   hire: `Why Hire Saiyam Jain?
-✓ Versatility: Solves problems across the entire lifecycle - from Java automation testing suites and microservices to React Native mobile apps and GenAI tools.
-✓ Proven Velocity: 44+ repositories and verified active GitHub commit matrix.
-✓ High Academic & Algorithmic Foundation: BCA 7.5 CGPA with mastery of DSA and graph algorithms.
-✓ Immediately adaptable to any engineering team and tech stack.`
+✓ Production Reliability: Proven track record in Java 21, Spring Boot 3, PostgreSQL RLS, and high-throughput Kafka streaming pipelines.
+✓ Applied GenAI Expertise: Solves real-world LLM problems—production RAG, tool calling, and token/cost tracing.
+✓ Code Credibility: 22+ merged pull requests across Meta (React Native), Selenium, Scale AI, and NestJS.
+✓ High Academic & Algorithmic Foundation: BCA 7.5 CGPA with mastery of DSA and distributed architectures.`
 };
 
 export default function AICopilot({ isOpen, onClose }) {
@@ -109,7 +110,7 @@ export default function AICopilot({ isOpen, onClose }) {
         reply = aiKnowledgeBase.projects;
       } else if (lower.includes('skill') || lower.includes('stack') || lower.includes('tech')) {
         reply = aiKnowledgeBase.skills;
-      } else if (lower.includes('experience') || lower.includes('job') || lower.includes('remotestate')) {
+      } else if (lower.includes('experience') || lower.includes('job') || lower.includes('remotestate') || lower.includes('newgen')) {
         reply = aiKnowledgeBase.experience;
       } else if (lower.includes('resume') || lower.includes('cv')) {
         reply = `You can access Saiyam's official resume here: ${personalInfo.resumeUrl}`;

@@ -66,7 +66,18 @@ export default function OpenSourceSection() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
             >
               <GitPullRequest size={13} className="text-emerald-400" />
-              <span>Selenium (7 Merged)</span>
+              <span>Selenium (8 Merged)</span>
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
+            <a
+              href="https://github.com/scaleapi/agentenv-framework/pull/520"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
+            >
+              <GitPullRequest size={13} className="text-sky-400" />
+              <span>Scale AI (3 Merged)</span>
               <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
@@ -110,7 +121,7 @@ export default function OpenSourceSection() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 group"
             >
               <GitPullRequest size={13} className="text-purple-400" />
-              <span>REA (2 Merged)</span>
+              <span>REA (3 Merged)</span>
               <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
@@ -332,7 +343,7 @@ export default function OpenSourceSection() {
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   <CheckCircle2 size={13} className="text-emerald-400" />
-                  7 PRs Merged into Trunk
+                  8 PRs Merged into Trunk
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">
                   Python WebDriver Core
@@ -371,6 +382,9 @@ export default function OpenSourceSection() {
                 </p>
                 <ul className="list-disc list-inside space-y-1.5 text-zinc-300 pl-1">
                   <li>
+                    <strong className="text-white">PR #18286 (Merged):</strong> Narrowed broad <code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">pytest.raises(Exception)</code> in BiDi tests for deterministic test failure detection (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">d12e84c</code>).
+                  </li>
+                  <li>
                     <strong className="text-white">PR #18272 (Merged):</strong> Validated declared numeric bounds during JavaScript BiDi serialization and deserialization, holding numbers to declared ranges (<code className="text-xs bg-zinc-900 px-1.5 py-0.5 rounded text-emerald-300">ac7a079</code>).
                   </li>
                   <li>
@@ -391,7 +405,7 @@ export default function OpenSourceSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span>7 PRs merged directly into upstream trunk by maintainer Corey Goldberg</span>
+                  <span>8 PRs merged directly into upstream trunk by maintainer Corey Goldberg</span>
                 </div>
                 <div className="flex items-start gap-2 text-xs font-mono text-zinc-400">
                   <ShieldCheck size={14} className="text-emerald-400 mt-0.5 shrink-0" />

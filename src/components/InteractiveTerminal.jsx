@@ -44,7 +44,7 @@ export default function InteractiveTerminal({ isOpen, onClose }) {
   • help        - Display this helpful guide
   • skills      - List engineering skill categories & proficiencies
   • projects    - View flagship projects with live demo links
-  • experience  - View professional work history (RemoteState)
+  • experience  - View professional work history (Newgen Technomate)
   • education   - View academic background (TMU BCA)
   • resume      - Open official resume in Google Drive
   • contact     - Show social coordinates & email

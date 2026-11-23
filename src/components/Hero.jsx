@@ -20,11 +20,11 @@ export default function Hero({ onOpenAI }) {
   const [roleIndex, setRoleIndex] = useState(0);
 
   const roles = [
-    "Polyglot Software Engineer (Java, JS, Python)",
-    "2+ Years Java Enterprise & Systems Depth",
-    "GenAI & LLM Application Architect",
-    "Full-Stack & React Native Specialist",
-    "Ready to Build, Ship & Scale Anything"
+    "Java Backend Engineer (Spring Boot 3 & PostgreSQL)",
+    "Applied GenAI & LLM Infrastructure Architect",
+    "Distributed Systems & Apache Kafka Streaming",
+    "22+ Upstream Merged PRs: Selenium, Meta, Scale AI",
+    "Sub-150ms Database & Retrieval Performance Tuning"
   ];
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Hero({ onOpenAI }) {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                 </span>
-                <span className="truncate">STATUS: OPEN TO FULL-STACK / BACKEND / JAVA / AI</span>
+                <span className="truncate">STATUS: OPEN TO JAVA BACKEND / APPLIED GENAI ROLES</span>
               </div>
 
               <button
@@ -82,7 +82,7 @@ export default function Hero({ onOpenAI }) {
 
             {/* Giant Futuristic Headline */}
             <p className="text-[11px] sm:text-sm font-mono uppercase tracking-[0.14em] sm:tracking-[0.25em] text-cyan-400 font-bold mb-2">
-              Polyglot Engineer • Full-Stack • 2+ Yrs Java • GenAI
+              Java Backend Engineer • Spring Boot 3 • PostgreSQL • Applied GenAI
             </p>
 
             <h1 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase leading-[0.95] mb-4">
@@ -101,26 +101,26 @@ export default function Hero({ onOpenAI }) {
             </div>
 
             <p className="text-sm sm:text-lg text-zinc-300 max-w-xl leading-relaxed font-normal mb-8">
-              Software engineer specializing in Java automation testing, modern AI-driven QA architectures, and high-performance full-stack systems (React, Node.js, Next.js). Experienced in building resilient test suites, production GenAI workflows, and scalable cross-platform software.
+              Java backend engineer (2+ years) specializing in Spring Boot 3, PostgreSQL, and LLM serving infrastructure: retrieval-augmented generation over private document sets, hybrid vector search, tool-calling layers, structured outputs, and token/cost observability at scale.
             </p>
 
             {/* Versatility Badges */}
             <div className="flex flex-wrap gap-2 mb-8 text-[11px] sm:text-xs font-mono">
               <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-zinc-900/90 border border-emerald-500/30 text-emerald-300 flex items-center gap-1.5">
                 <ShieldCheck size={13} className="shrink-0" />
-                Java & Automation Testing (2+ Yrs)
+                Java 21 &amp; Spring Boot 3 (2+ Yrs)
               </span>
               <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-zinc-900/90 border border-cyan-500/30 text-cyan-300 flex items-center gap-1.5">
                 <Cpu size={13} className="shrink-0" />
-                Modern AI Testing & GenAI
+                Applied GenAI &amp; pgvector (HNSW)
               </span>
               <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-zinc-900/90 border border-purple-500/30 text-purple-300 flex items-center gap-1.5">
                 <Layers size={13} className="shrink-0" />
-                Full-Stack MERN
+                Apache Kafka &amp; Distributed Systems
               </span>
               <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-zinc-900/90 border border-amber-500/30 text-amber-300 flex items-center gap-1.5">
                 <Zap size={13} className="shrink-0" />
-                React Native Core Contributor
+                Upstream OSS Contributor (22+ PRs)
               </span>
             </div>
 

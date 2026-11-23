@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="24" fill="#090d16"/>
+  <rect x="1" y="1" width="118" height="118" rx="23" stroke="rgba(6,182,212,0.3)" stroke-width="2"/>
+  <path d="M34 86V34L58 66V34H70V86L46 54V86H34Z" fill="url(#newgenGrad)"/>
+  <circle cx="86" cy="34" r="5" fill="#10B981"/>
+  <defs>
+    <linearGradient id="newgenGrad" x1="34" y1="34" x2="86" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/>
+      <stop offset="0.5" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+</svg>

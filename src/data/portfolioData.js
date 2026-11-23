@@ -2,23 +2,23 @@ export const personalInfo = {
   name: "Saiyam Jain",
   title: "Polyglot Software Engineer & AI Builder",
   roles: [
-    "Java Automation Testing & Systems (2+ Yrs)",
-    "Modern AI Testing & GenAI Architect",
+    "Java Backend & Systems Engineer (2+ Yrs)",
+    "Applied GenAI & LLM Infrastructure",
     "Full-Stack Web & Mobile Engineer",
     "React & React Native Specialist",
-    "High-Performance Cloud & Backend Developer"
+    "High-Performance Cloud & Distributed Systems"
   ],
-  bio: "Software engineer and official core contributor to React Native (Meta), NestJS, and Selenium, specializing in browser automation testing, modern AI-driven QA architectures, and end-to-end full-stack development (React, Node.js, Next.js). Delivering enterprise-grade test automation, resilient microservices, and practical generative AI tooling.",
-  valueProposition: "Expertise across Selenium & Java test automation frameworks, modern AI QA tooling, real-time reactive applications, and scalable microservices.",
-  location: "India (Open to Global Remote & Relocation)",
-  status: "Actively interviewing for Software Engineering & Full-Stack / Backend / AI roles",
+  bio: "Java backend engineer (2+ years) on Spring Boot 3 and PostgreSQL specializing in Applied GenAI architectures (RAG, pgvector, tool calling), high-throughput distributed messaging (Kafka), and upstream open-source contributions to React Native (Meta), NestJS, and Selenium.",
+  valueProposition: "Expertise across Spring Boot 3, PostgreSQL, pgvector retrieval, Kafka event architectures, and resilient microservices.",
+  location: "Delhi NCR, India (Open to Global Remote & Relocation)",
+  status: "Actively interviewing for Software Engineer, Backend & Applied AI roles",
   email: "saiyamjain.d@gmail.com",
   github: "https://github.com/saiyam-jain-dev",
   githubUsername: "saiyam-jain-dev",
-  linkedin: "https://www.linkedin.com/in/saiyam-jain-d/",
+  linkedin: "https://www.linkedin.com/in/itzsamdev/",
   twitter: "https://twitter.com/_Samdev_",
   instagram: "https://www.instagram.com/saiyamjainn__/",
-  resumeUrl: "https://drive.google.com/file/d/1RZjlYBWEqFdFrYwpol0yKkb6Yn2bGO55/view?usp=drive_link",
+  resumeUrl: "https://drive.google.com/file/d/1YfehV75rfwUT8k6YOY2paR6XFbuQOeAb/view?usp=sharing",
   avatarUrl: "/favicon.svg",
   emailjs: {
     serviceId: "service_h3jxa89",
@@ -28,8 +28,8 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { label: "Java & Systems Depth", value: "2+ Yrs", icon: "Code2" },
-  { label: "Tier-1 Upstream PRs", value: "18+", icon: "GitPullRequest" },
+  { label: "Java Backend Depth", value: "2+ Yrs", icon: "Code2" },
+  { label: "Merged Upstream PRs", value: "24", icon: "GitPullRequest" },
   { label: "Public Repositories", value: "44+", icon: "GitBranch" },
   { label: "Shipped Projects", value: "14+", icon: "Cpu" }
 ];
@@ -38,17 +38,18 @@ export const skillCategories = [
   {
     id: "backend",
     title: "Backend, Systems & Databases",
-    description: "Enterprise Java architectures, Python automation, distributed data stores, and scalable REST APIs",
+    description: "Enterprise Java 21, Spring Boot 3, Kafka event pipelines, PostgreSQL RLS, and high-performance microservices",
     skills: [
-      { name: "Python", level: "Expert • 3+ Years", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
-      { name: "Java (Core & EE)", level: "2+ Years • Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-      { name: "Spring Boot / REST APIs", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
-      { name: "Node.js & Express", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
+      { name: "Java 21 / 17", level: "2+ Years • Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
+      { name: "Spring Boot 3", level: "Production • Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
+      { name: "Apache Kafka", level: "Production • Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original.svg" },
+      { name: "PostgreSQL & RLS", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
+      { name: "pgvector", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
+      { name: "Python 3.11+", level: "Expert • 3+ Years", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "TypeScript", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
-      { name: "PostgreSQL", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
+      { name: "Redis", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg" },
       { name: "MongoDB", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" },
-      { name: "MySQL", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
-      { name: "Firebase & Supabase", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" }
+      { name: "Node.js & Express", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" }
     ]
   },
   {
@@ -68,24 +69,26 @@ export const skillCategories = [
   {
     id: "ai",
     title: "GenAI, LLMs & AI Engineering",
-    description: "AI-augmented workflows, local-first models, audio/video AI pipelines, and agentic integrations",
+    description: "Spring AI, RAG over private document sets, tool calling, structured outputs, and token/cost observability",
     skills: [
+      { name: "Spring AI", level: "Production-Ready", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
+      { name: "RAG & pgvector (HNSW)", level: "Production-Ready", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
+      { name: "Tool & Function Calling", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
+      { name: "JSON Schema Output", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
+      { name: "OpenTelemetry Tracing", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "Python AI & Pipelines", level: "Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
-      { name: "GenAI & LLM Integration", level: "Production-Ready", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
       { name: "OpenAI & Claude APIs", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
-      { name: "Local-First AI Tooling", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
-      { name: "Computer Vision / OpenCV", level: "Intermediate", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" },
-      { name: "AI Automated Testing", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" }
+      { name: "Local-First AI Tooling", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" }
     ]
   },
   {
     id: "mobile",
-    title: "Mobile & Automation Testing",
-    description: "Cross-platform mobile applications and enterprise end-to-end browser test automation",
+    title: "Mobile & Protocol Tooling",
+    description: "Cross-platform mobile runtimes and upstream protocol conformance testing",
     skills: [
       { name: "React Native", level: "Advanced • Core Contributor", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
-      { name: "Java Automation Testing", level: "2+ Years • Expert", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-      { name: "Selenium & TestNG", level: "Expert • Core Contributor", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" },
+      { name: "Selenium WebDriver", level: "Core Contributor (8 PRs)", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" },
+      { name: "WebDriver BiDi & Protocols", level: "Advanced Conformance", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
       { name: "Mobile App QA", level: "Advanced", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" }
     ]
   },
@@ -106,19 +109,22 @@ export const skillCategories = [
 export const experiences = [
   {
     id: 1,
-    role: "Java Automation Testing & AI Systems Engineer",
-    company: "Independent Software & Systems Development",
-    location: "India",
+    role: "Software Engineer, Backend",
+    company: "Newgen Technomate",
+    location: "Noida, India",
     date: "July 2024 - Present",
-    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-    description: "Architecting automated Java test frameworks, continuous integration pipelines, and generative AI-powered testing systems for high-reliability web and backend applications.",
+    logo: "/newgen-logo.svg",
+    description: "Architecting resilient REST services, GenAI search/retrieval systems, and high-throughput event streaming pipelines for a multi-tenant document-processing platform on Spring Boot 3 and PostgreSQL.",
     highlights: [
-      "Engineered automated test suites using Java, Selenium, and TestNG for robust regression and end-to-end verification",
-      "Leveraged modern AI tools and LLM pipelines to generate test scenarios, automate edge-case validation, and increase test coverage",
-      "Built resilient CI/CD GitHub workflows ensuring zero-regression code delivery across multiple microservices",
-      "Developed local-first GenAI utilities and maintained 44+ public engineering repositories on GitHub"
+      "Engineered secure multi-tenant REST services (Spring Boot 3, PostgreSQL) with OAuth2/JWT RBAC and per-tenant Row-Level Security (RLS) policies.",
+      "Shipped document search & Q&A feature on Spring AI and pgvector with HNSW vector retrieval, JSON Schema-constrained output, and mid-answer tool-calling.",
+      "Streamed long-running extraction jobs to Next.js via Server-Sent Events (SSE), eliminating a polling loop that drove ~40% of job-status read traffic.",
+      "Instrumented calls with OpenTelemetry spans tracking token count and latency to identify high-cost prompts and optimize LLM spend.",
+      "Reduced list endpoint p95 latency from ~900ms to ~150ms (N+1 removal, composite indexes) and report query p99 from ~800ms to ~150ms on a 20M-row table (range partitioning).",
+      "Developed idempotent Kafka consumers (~250k events/day) with Avro schemas, DLQ poison-message replay CLI, and Resilience4j circuit breakers.",
+      "Automated CI/CD pipelines on GitHub Actions using Testcontainers (real PostgreSQL and Kafka), versioned Flyway migrations, and Helm charts for AWS EKS deploys."
     ],
-    skills: ["Java (2+ Yrs)", "Automation Testing", "Selenium", "AI Testing Tools", "GenAI", "TestNG", "CI/CD", "REST APIs"]
+    skills: ["Java 21", "Spring Boot 3", "PostgreSQL", "pgvector", "Spring AI", "Apache Kafka", "Docker", "Kubernetes", "OpenTelemetry", "Resilience4j", "Flyway", "Testcontainers"]
   },
   {
     id: 2,
@@ -312,7 +318,7 @@ export const initialGithubRepos = [
   },
   {
     name: "selenium (SeleniumHQ/selenium)",
-    description: "Official Selenium browser automation framework. Core contributor: 7 merged PRs across Python and JS WebDriver engines (RFC 6265, BiDi bounds, error handling).",
+    description: "Official Selenium browser automation framework. Core contributor: 8 merged PRs across Python and JS WebDriver engines (RFC 6265, BiDi bounds, error handling).",
     html_url: "https://github.com/SeleniumHQ/selenium/pull/18239",
     homepage: "https://www.selenium.dev/",
     language: "Python",
@@ -322,8 +328,8 @@ export const initialGithubRepos = [
   },
   {
     name: "rea (morluto/rea)",
-    description: "Reverse engineer anything with agents. Merged PR #6973 (BEAM views) & PR #7097 (export paths).",
-    html_url: "https://github.com/morluto/rea/pull/6973",
+    description: "Reverse engineer anything with agents. Merged PR #6973, #7097, #9191 (BEAM views, export paths, safe int counts).",
+    html_url: "https://github.com/morluto/rea/pull/9191",
     homepage: "https://github.com/morluto/rea",
     language: "TypeScript",
     stargazers_count: 300000,

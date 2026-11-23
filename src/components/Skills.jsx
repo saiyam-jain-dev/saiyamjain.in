@@ -38,7 +38,7 @@ export default function Skills() {
             Skills & Stack
           </h2>
           <p className="text-sm text-zinc-400 font-mono mt-1 max-w-3xl">
-            Python, Java, Spring Boot, React, React Native, Node.js, GenAI, and Cloud Infrastructure.
+            Java 21, Spring Boot 3, PostgreSQL, pgvector, Apache Kafka, Spring AI, Docker, and Kubernetes.
           </p>
         </div>
 
